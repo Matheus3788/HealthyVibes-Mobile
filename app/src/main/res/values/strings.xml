@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pi</string>
+    <string name="cadastre">Não possui cadastro? <font color ='#003DB3'><u>Cadastre-se</u></font></string>
+
+
+    <string name="cad">Não possui cadastro? </string>
+    <string name="cadastrese"><font color ='#003DB3'><u>Cadastre-se</u></font></string>
+    <string name="login"><u>Login</u></string>
+</resources>
