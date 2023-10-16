@@ -10,4 +10,4 @@
 ## Refências
 
 - Link para interface web [Web Interface](https://github.com/lucasalbuquerque57/Healthy-Vibes-FrontEnd)
-- Link para interface back-end [Back-End Interface](https://github.com/DaltonGuima/HealthyVibes-REST-API-Back-End)
+- Link para o back-end Rest API [Back-End Rest API](https://github.com/DaltonGuima/HealthyVibes-REST-API-Back-End)
