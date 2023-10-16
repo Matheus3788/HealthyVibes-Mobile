@@ -5,7 +5,7 @@
 <img src="https://github.com/DaltonGuima/HealthyVibes-REST-API-Back-End/assets/83316074/531844d7-2e14-4847-8ca5-1dcff03811c3" width="300" height="300" />
 
 ## Tecnologias usadas
-[![My Skills](https://skillicons.dev/icons?i=ts,java&theme=dark)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=java,androidstudio&theme=dark)](https://skillicons.dev)
 
 ## Refências
 
