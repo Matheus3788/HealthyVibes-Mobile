@@ -28,6 +28,8 @@ public class Login extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.textView7);
 
+        Button btnTemporario = findViewById(R.id.btnlogprin);
+
         // Defina um OnClickListener para a parte clicável (a palavra "aqui")
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +38,11 @@ public class Login extends AppCompatActivity {
                 Intent intent = new Intent(Login.this, Register.class);
                 startActivity(intent);
             }
+        });
+
+        btnTemporario.setOnClickListener( e ->{
+            Intent intent = new Intent(Login.this, Home.class);
+            startActivity(intent);
         });
     }
 }
