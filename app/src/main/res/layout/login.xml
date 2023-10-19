@@ -6,60 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/login">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="Welcome"
-        android:textColor="@color/black"
-        android:textSize="36dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
-
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="310dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        android:autoSizeTextType="uniform"
-        android:background="@drawable/insert_cadlog"
-        android:ems="10"
-        android:hint="Usuário"
-        android:inputType="text"
-        android:maxLines="1"
-        android:paddingStart="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
-
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="310dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="25dp"
-        android:autoSizeTextType="uniform"
-        android:background="@drawable/insert_cadlog"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:paddingStart="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
-        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnlogprin"
@@ -77,8 +23,77 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:layout_constraintVertical_bias="0.084" />
+        app:layout_constraintVertical_bias="0.07" />
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Esqueceu a Senha?"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintVertical_bias="0.002" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/insert_cadlog"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingStart="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Welcome"
+        android:textColor="@color/black"
+        android:textSize="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.261" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/insert_cadlog"
+        android:ems="10"
+        android:hint="Usuário"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.334" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -112,23 +127,5 @@
 
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="Esqueceu a Senha?"
-        android:textColor="@color/black"
-        android:textSize="14dp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.258"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:layout_constraintVertical_bias="0.02"
-        />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
