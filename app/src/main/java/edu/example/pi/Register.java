@@ -9,18 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import android.widget.Toast;
-import com.github.kittinunf.fuel.Fuel;
-import com.github.kittinunf.fuel.core.Handler;
-import com.github.kittinunf.fuel.core.Request;
-import com.github.kittinunf.fuel.core.Response;
-import com.github.kittinunf.fuel.core.FuelError;
 import com.google.gson.Gson;
 
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import edu.example.pi.interfac.UserResponse;
