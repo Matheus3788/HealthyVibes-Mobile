@@ -62,7 +62,7 @@
             android:textSize="36dp" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/editName"
             android:layout_width="310dp"
             android:layout_height="50dp"
             android:autoSizeTextType="uniform"
@@ -74,7 +74,7 @@
             android:paddingStart="10dp" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/editemail"
             android:layout_width="310dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
@@ -87,7 +87,7 @@
             android:paddingStart="10dp" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/editPassword"
             android:layout_width="310dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
@@ -113,7 +113,7 @@
             android:paddingStart="10dp" />
 
         <Button
-            android:id="@+id/btncadprin"
+            android:id="@+id/btnRegister"
             android:layout_width="150dp"
             android:layout_height="54dp"
             android:layout_marginTop="50dp"
