@@ -7,7 +7,7 @@
 ## Tecnologias usadas
 [![My Skills](https://skillicons.dev/icons?i=java,androidstudio&theme=dark)](https://skillicons.dev)
 
-## Refências
+## Referências
 
 - Link para interface web [Web Interface](https://github.com/lucasalbuquerque57/Healthy-Vibes-FrontEnd)
 - Link para o back-end Rest API [Back-End Rest API](https://github.com/DaltonGuima/HealthyVibes-REST-API-Back-End)
