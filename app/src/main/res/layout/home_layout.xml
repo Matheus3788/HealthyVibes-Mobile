@@ -120,7 +120,7 @@
         app:strokeWidth="1dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnCalculadora"
         android:layout_width="139dp"
         android:layout_height="142dp"
         android:backgroundTint="@color/white"
