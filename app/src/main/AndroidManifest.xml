@@ -27,6 +27,7 @@
         <activity android:name=".Register"></activity>
         <activity android:name=".Home"></activity>
         <activity android:name=".Calculadora"></activity>
+        <activity android:name=".EditProfile"></activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

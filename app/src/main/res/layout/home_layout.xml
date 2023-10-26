@@ -84,7 +84,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnCalorias"
         android:layout_width="138dp"
         android:layout_height="138dp"
         android:backgroundTint="@color/white"
@@ -102,7 +102,7 @@
         app:strokeWidth="1dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnAgua"
         android:layout_width="138dp"
         android:layout_height="138dp"
         android:backgroundTint="@color/white"
@@ -139,7 +139,7 @@
         app:strokeWidth="1dp" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnImc"
         android:layout_width="138dp"
         android:layout_height="138dp"
         android:backgroundTint="@color/white"

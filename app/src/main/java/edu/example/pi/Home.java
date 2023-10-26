@@ -15,10 +15,13 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.home_layout);
 
         Button btnCalculadora = findViewById(R.id.btnCalculadora);
+        Button btnTeste = findViewById(R.id.btnCalorias);
 
         btnCalculadora.setOnClickListener( e->{
-            Intent intent = new Intent(Home.this, Calculadora.class);
-            startActivity(intent);
+            Intent irCalculadora = new Intent(Home.this, Calculadora.class);
+            startActivity(irCalculadora);
         });
+
+
     }
 }
