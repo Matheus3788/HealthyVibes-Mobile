@@ -22,6 +22,10 @@ public class Home extends AppCompatActivity {
             startActivity(irCalculadora);
         });
 
+        btnTeste.setOnClickListener(e->{
+            Intent irEditProfile = new Intent(Home.this, EditProfile.class);
+            startActivity(irEditProfile);
+        });
 
     }
 }

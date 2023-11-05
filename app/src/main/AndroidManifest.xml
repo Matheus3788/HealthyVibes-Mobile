@@ -16,8 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pi"
         tools:targetApi="31">
-        <activity android:name=".EditProfile"
-            android:exported="true">
+        <activity android:name=".Firstpage" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -25,8 +24,9 @@
         </activity>
        <activity android:name=".Login"></activity>
         <activity android:name=".Register"></activity>
-        <activity android:name=".Home"></activity>
+        <activity android:name=".EditProfile"></activity>
         <activity android:name=".Calculadora"></activity>
+        <activity android:name=".Home"></activity>
 <!--        <activity android:name=".EditProfile"></activity>-->
         <meta-data
             android:name="preloaded_fonts"

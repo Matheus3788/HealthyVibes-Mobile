@@ -85,8 +85,8 @@
 
     <Button
         android:id="@+id/btnCalorias"
-        android:layout_width="138dp"
-        android:layout_height="138dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:backgroundTint="@color/white"
         android:drawableBottom="@drawable/kcal_icon"
         android:text="Calorias"
@@ -94,17 +94,17 @@
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.323"
+        app:layout_constraintVertical_bias="0.363"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp" />
 
     <Button
         android:id="@+id/btnAgua"
-        android:layout_width="138dp"
-        android:layout_height="138dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:backgroundTint="@color/white"
         android:drawableBottom="@drawable/water_icon"
         android:text="Água"
@@ -112,17 +112,17 @@
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.323"
+        app:layout_constraintVertical_bias="0.363"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp" />
 
     <Button
         android:id="@+id/btnCalculadora"
-        android:layout_width="139dp"
-        android:layout_height="142dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:backgroundTint="@color/white"
         android:drawableBottom="@drawable/calculator_icon"
         android:text="Calculadora"
@@ -131,17 +131,17 @@
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65"
+        app:layout_constraintVertical_bias="0.728"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp" />
 
     <Button
         android:id="@+id/btnImc"
-        android:layout_width="138dp"
-        android:layout_height="138dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:backgroundTint="@color/white"
         android:drawableBottom="@drawable/chart_icon"
         android:text="IMC"
@@ -149,10 +149,10 @@
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65"
+        app:layout_constraintVertical_bias="0.728"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp" />
 
