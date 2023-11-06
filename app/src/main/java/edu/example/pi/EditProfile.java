@@ -35,7 +35,7 @@ public class EditProfile extends AppCompatActivity {
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
-        dialog.setContentView(R.layout.modal_confirmar_exclusao);
+        dialog.setContentView(R.layout.profile_modal_confirmar_exclusao);
         dialog.show();
     }
 

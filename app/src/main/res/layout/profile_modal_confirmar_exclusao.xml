@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,15 +12,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/insert_cadlog">
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
+            android:layout_width="37dp"
             android:layout_height="41dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="6dp"
             android:background="@color/white"
-            app:srcCompat="@android:drawable/btn_dialog" />
+            android:visibility="visible"
+            app:srcCompat="@drawable/baseline_close_24" />
 
         <TextView
             android:id="@+id/textView26"
@@ -38,7 +42,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnatualizadieta"
                 android:layout_width="20dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="15dp"

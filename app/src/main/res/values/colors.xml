@@ -11,8 +11,12 @@
     <color name="logininicial">#292629</color>
     <color name="button">#C91D8F01</color>
     <color name="button_drop">#BCB93C3C</color>
+    <color name="button_agua">#4472C4</color>
     <color name="hyperlink">#003DB3</color>
-
-<!--    #B93C3C-->
+    <color name="background_modal_dieta">#E9F8E7</color>
+    <color name="background_modal_calorias">#D2EAFFE5</color>
+    <color name="background_modal_agua">#D2DCE1FD</color>
+    <color name="background_modal_imc">#99D4F4CC</color>
+    <!--    #B93C3C-->
 <!--    #55B93C-->
 </resources>
