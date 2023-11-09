@@ -13,6 +13,7 @@
     <color name="button_drop">#BCB93C3C</color>
     <color name="button_agua">#4472C4</color>
     <color name="hyperlink">#003DB3</color>
+    <color name="background_geral">#F5F5F5</color>
     <color name="background_modal_dieta">#E9F8E7</color>
     <color name="background_modal_calorias">#D2EAFFE5</color>
     <color name="background_modal_agua">#D2DCE1FD</color>
