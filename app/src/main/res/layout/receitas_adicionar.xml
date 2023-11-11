@@ -22,11 +22,11 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="140dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="25dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="Adicionar Receita"
                 android:textColor="@color/black"
                 android:textSize="30dp"
@@ -353,7 +353,7 @@
     </ScrollView>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView2"
+        android:id="@+id/fragment"
         android:name="edu.example.pi.BarraAtalhosFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
