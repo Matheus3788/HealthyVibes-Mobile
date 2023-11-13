@@ -27,12 +27,15 @@ public class Triceps extends AppCompatActivity {
         videoView = findViewById(R.id.videoView);
         String videoPath = "android.resource://" + getPackageName()+"/" + R.raw.triceps;
 
+
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
 
         MediaController mediaController = new MediaController(this);
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
+
+        videoView.start();
 
         btnvoltar.setOnClickListener(new View.OnClickListener() {
             @Override

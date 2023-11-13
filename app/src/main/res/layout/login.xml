@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/editsenhalog"
         app:layout_constraintVertical_bias="0.07" />
 
     <TextView
@@ -38,11 +38,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.264"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/editsenhalog"
         app:layout_constraintVertical_bias="0.002" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editsenhalog"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editName"
+        app:layout_constraintTop_toBottomOf="@+id/editemaillog"
         app:layout_constraintVertical_bias="0.011" />
 
     <TextView
@@ -77,14 +77,14 @@
         app:layout_constraintVertical_bias="0.261" />
 
     <EditText
-        android:id="@+id/editName"
+        android:id="@+id/editemaillog"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:layout_marginTop="35dp"
         android:autoSizeTextType="uniform"
         android:background="@drawable/insert_cadlog"
         android:ems="10"
-        android:hint="Usuário"
+        android:hint="Email"
         android:inputType="text"
         android:maxLines="1"
         android:paddingStart="10dp"

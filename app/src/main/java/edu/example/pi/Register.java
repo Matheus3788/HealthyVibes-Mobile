@@ -9,23 +9,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import android.widget.Toast;
-import com.google.gson.Gson;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
-import edu.example.pi.interfac.UserResponse;
-import edu.example.pi.interfac.UserService;
+import edu.example.pi.Cadastro.UserResponse;
+import edu.example.pi.Cadastro.UserService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import edu.example.pi.interfac.UserResponse;
-
-
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 
@@ -37,9 +31,10 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
 
-        final EditText edtName = findViewById(R.id.editName);
+        final EditText edtName = findViewById(R.id.editemaillog);
         final EditText edtEmail = findViewById(R.id.editemail);
         final EditText edtPassword = findViewById(R.id.editPassword);
+        final EditText edtconfpassword = findViewById(R.id.editconpassword);
         Button btnRegister = findViewById(R.id.btnRegister);
 
 
@@ -53,11 +48,17 @@ public class Register extends AppCompatActivity {
                 String nome = edtName.getText().toString();
                 String email = edtEmail.getText().toString();
                 String senha = edtPassword.getText().toString();
+                String confirmarSenha = edtconfpassword.getText().toString();
 
+                if (!senha.equals(confirmarSenha)) {
+                    // Senhas diferentes, exiba uma mensagem de erro
+                    Toast.makeText(Register.this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
+                    edtconfpassword.setBackground(ContextCompat.getDrawable(Register.this, R.drawable.edittext_border));
+                    return; // Saia do método para evitar o envio da solicitação
+                }
 
-// //localhost
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://192.168.1.104:3333/")
+                        .baseUrl("http://192.168.1.106:3333/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 

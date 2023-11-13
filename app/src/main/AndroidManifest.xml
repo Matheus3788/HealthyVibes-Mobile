@@ -10,9 +10,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/icon_project"
+        android:label="HealthyVibes"
+        android:roundIcon="@drawable/icon_project"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pi"
         tools:targetApi="31">
