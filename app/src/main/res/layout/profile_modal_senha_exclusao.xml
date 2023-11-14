@@ -57,7 +57,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnatualizadieta"
+                android:id="@+id/btnvoltaexcluir"
                 android:layout_width="20dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="15dp"
@@ -71,7 +71,7 @@
                 />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btndeletedefinitivo"
                 android:layout_width="20dp"
                 android:layout_height="55dp"
                 android:layout_marginRight="15dp"

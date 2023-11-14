@@ -50,7 +50,7 @@
             android:textColor="@color/black" />
 
         <Button
-            android:id="@+id/btnatualizadieta"
+            android:id="@+id/btnvoltaprofile"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

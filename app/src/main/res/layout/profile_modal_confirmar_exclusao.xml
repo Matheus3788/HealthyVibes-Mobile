@@ -16,7 +16,7 @@
         android:background="@drawable/insert_cadlog">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btnclosemodal"
             android:layout_width="37dp"
             android:layout_height="41dp"
             android:layout_marginLeft="15dp"
@@ -42,7 +42,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnatualizadieta"
+                android:id="@+id/btnvoltaprofile"
                 android:layout_width="20dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="15dp"
@@ -56,7 +56,7 @@
                 />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btnfirstdelete"
                 android:layout_width="20dp"
                 android:layout_height="55dp"
                 android:layout_marginRight="15dp"
