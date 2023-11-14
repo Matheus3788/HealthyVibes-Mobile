@@ -100,7 +100,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Ação a ser executada quando "aqui" é clicado
-                Intent intent = new Intent(Login.this, Register.class);
+                Intent intent = new Intent(Login.this, Home.class);
                 startActivity(intent);
             }
         });

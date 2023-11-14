@@ -71,7 +71,9 @@
             android:hint="Usuário"
             android:inputType="text"
             android:maxLines="1"
-            android:paddingStart="10dp" />
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/darker_gray" />
 
         <EditText
             android:id="@+id/editemail"
@@ -84,7 +86,9 @@
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:paddingStart="10dp" />
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/darker_gray" />
 
         <EditText
             android:id="@+id/editPassword"
@@ -97,7 +101,9 @@
             android:hint="Senha"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:paddingStart="10dp" />
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/darker_gray" />
 
         <EditText
             android:id="@+id/editconpassword"
@@ -110,7 +116,9 @@
             android:hint="Confirmar Senha"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:paddingStart="10dp" />
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/darker_gray" />
 
         <Button
             android:id="@+id/btnRegister"
