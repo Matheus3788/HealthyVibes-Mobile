@@ -1,6 +1,8 @@
 package edu.example.pi;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -42,7 +44,7 @@ public class Login extends AppCompatActivity {
             String senha = senhalog.getText().toString();
 
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://192.168.1.106:3333/")
+                    .baseUrl("http://192.168.1.109:3333/")
                     .addConverterFactory(GsonConverterFactory.create())
                 .build();
             Log.d("Retrofit", "Retrofit criado com sucesso");
@@ -60,15 +62,24 @@ public class Login extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     LoginResponse loginResponse = response.body();
                     String accessToken = loginResponse.getAccessToken();
-                    String userId = loginResponse.getUserId();
+                    String user = loginResponse.getUser();
                     String message = loginResponse.getMessage();
                     String userName = loginResponse.getUserName();
+
 
                     // Armazene o token de acesso (accessToken) e o ID do usuário (userId) conforme necessário
                     // Exiba uma mensagem ou redirecione para a próxima tela
                     if (accessToken != null && !accessToken.isEmpty()) {
                         accessToken = loginResponse.getAccessToken();
-                        userId = loginResponse.getUserId();
+                        user = loginResponse.getUser();
+
+                        SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        String token = loginResponse.getAccessToken();
+                        String id = loginResponse.getUser();
+                        editor.putString("token", token);
+                        editor.putString("id", id);
+                        editor.commit();
 
                         Intent intent = new Intent(Login.this, Home.class);
                         intent.putExtra("userName", userName);

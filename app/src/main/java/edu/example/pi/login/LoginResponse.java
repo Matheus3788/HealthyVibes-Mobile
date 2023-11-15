@@ -5,6 +5,7 @@ public class LoginResponse {
     private String user; // Se o ID do usuário for uma string; ajuste conforme necessário
     private String message; // Mensagem opcional
 
+
     private String userName;
 
 
@@ -15,15 +16,32 @@ public class LoginResponse {
         this.message = message;
     }
 
+    public LoginResponse(String accessToken, String user) {
+        this.accessToken = accessToken;
+        this.user = user;
+
+    }
+
+
     // Método para obter o token de acesso
     public String getAccessToken() {
         return accessToken;
     }
 
     // Método para obter o ID do usuário
-    public String getUserId() {
+    public String getUser() {
         return user;
     }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
+
 
 
     public String getUserName() {
