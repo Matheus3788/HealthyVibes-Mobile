@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,7 +45,8 @@ public class DietasSalvas extends AppCompatActivity {
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.dietas_modal_adicionar);
 
-        Button btnvoltaradd = dialog.findViewById(R.id.btnvoltaradd);
+        ImageButton btnvoltaradd = dialog.findViewById(R.id.btnvoltaradd);
+
 
         btnvoltaradd.setOnClickListener(new View.OnClickListener() {
             @Override

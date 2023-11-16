@@ -17,7 +17,7 @@ public class MembrosSuperiores extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exercicios_membros_superiores);
 
-        btntriceps = findViewById(R.id.btntriceps);
+        btntriceps = findViewById(R.id.btnsprinter);
 
         btntriceps.setOnClickListener(new View.OnClickListener() {
             @Override

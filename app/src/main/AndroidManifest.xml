@@ -33,6 +33,8 @@
         <activity android:name=".MembrosSuperiores"></activity>
         <activity android:name=".videos.Triceps"></activity>
         <activity android:name=".DietasSalvas"></activity>
+        <activity android:name=".videos.Abdominal"></activity>
+        <activity android:name=".videos.AlongamentoCobra"></activity>
 
         <!--        <activity android:name=".EditProfile"></activity>-->
         <meta-data
