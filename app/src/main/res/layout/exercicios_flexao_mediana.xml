@@ -101,7 +101,7 @@
         android:layout_width="370dp"
         android:layout_height="220dp"
         android:gravity="fill"
-        android:text="A Flexão Simples é definida como a flexão sem força normal. Quando a flexão ocorre com a atuação de força normal tem-se a Flexão Composta. Solicitação normal é aquela cujo esforço solicitante produz tensões normais (perpendiculares) às seções transversais do elemento estrutural."
+        android:text="Quando você faz uma flexão mediana, trabalha os músculos do peitoral, tríceps, ombros, abdômen, lombar e, até mesmo, dos membros inferiores. O Fortalecimento muscular. Por trabalhar vários músculos, a execução do exercício aumenta o condicionamento físico e, com isso, uma resposta metabólica melhor. "
         android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
