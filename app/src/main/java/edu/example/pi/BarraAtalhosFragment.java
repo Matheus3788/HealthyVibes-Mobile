@@ -28,6 +28,7 @@ public class BarraAtalhosFragment extends Fragment {
         ImageButton btnexercicio = view.findViewById(R.id.navBtnExercicios);
         ImageButton btnhome = view.findViewById(R.id.navBtnHome);
         ImageButton btnprofile = view.findViewById(R.id.navBtnPerfil);
+        ImageButton btndieta = view.findViewById(R.id.navBtnDieta);
         btnexercicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +48,14 @@ public class BarraAtalhosFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), EditProfile.class);
+                startActivity(intent);
+            }
+        });
+
+        btndieta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), DietasSalvas.class);
                 startActivity(intent);
             }
         });

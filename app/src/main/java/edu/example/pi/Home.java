@@ -12,14 +12,18 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Home extends AppCompatActivity {
 
     TextView userNameTextView ;
-
+    Button btnCalculadora;
+    Button btnCalorias;
+    Button btnImc;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_layout);
 
-        Button btnCalculadora = findViewById(R.id.btnCalculadora);
-        Button btnTeste = findViewById(R.id.btnCalorias);
+         btnCalculadora = findViewById(R.id.btnCalculadora);
+         btnCalorias = findViewById(R.id.btnCalorias);
+         btnImc = findViewById(R.id.btnImc);
+
         userNameTextView  = findViewById(R.id.txtUserName);
 
         String userN = getIntent().getStringExtra("userName");
@@ -31,10 +35,9 @@ public class Home extends AppCompatActivity {
             startActivity(irCalculadora);
         });
 
-        btnTeste.setOnClickListener(e->{
-            Intent irEditProfile = new Intent(Home.this, EditProfile.class);
-            startActivity(irEditProfile);
-        });
+
+
+
 
     }
 

@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/dieta_item" />
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/txtDietaNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
