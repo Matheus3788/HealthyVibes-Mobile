@@ -35,6 +35,12 @@
         <activity android:name=".DietasSalvas"></activity>
         <activity android:name=".videos.Abdominal"></activity>
         <activity android:name=".videos.AlongamentoCobra"></activity>
+        <activity android:name=".videos.Prancha"></activity>
+        <activity android:name=".videos.Agachamento_Simples"></activity>
+        <activity android:name=".videos.FlexaoMediana"></activity>
+        <activity android:name=".videos.FlexaoSimples"></activity>
+        <activity android:name=".videos.Sprinter"></activity>
+
 
         <!--        <activity android:name=".EditProfile"></activity>-->
         <meta-data
