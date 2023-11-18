@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import edu.example.pi.Receitas.ReceitasSalvas;
 
 public class BarraAtalhosFragment extends Fragment {
 
@@ -55,7 +56,7 @@ public class BarraAtalhosFragment extends Fragment {
         btndieta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), DietasSalvas.class);
+                Intent intent = new Intent(getActivity(), ReceitasSalvas.class);
                 startActivity(intent);
             }
         });

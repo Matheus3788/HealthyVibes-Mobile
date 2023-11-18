@@ -31,7 +31,6 @@
         <activity android:name=".MembrosInferioresABS"></activity>
         <activity android:name=".MembrosSuperiores"></activity>
         <activity android:name=".videos.Triceps"></activity>
-        <activity android:name=".DietasSalvas"></activity>
         <activity android:name=".videos.Abdominal"></activity>
         <activity android:name=".videos.AlongamentoCobra"></activity>
         <activity android:name=".videos.Prancha"></activity>
@@ -50,6 +49,11 @@
     </application>
 
 </manifest>
+
+        <activity android:name=".Receitas.AdicionarReceita"></activity>
+        <activity android:name=".Receitas.ReceitasSalvas"></activity>
+
+
 
 
 

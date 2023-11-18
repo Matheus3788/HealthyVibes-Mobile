@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/textView33"
-        android:layout_width="85dp"
+        android:layout_width="105dp"
         android:layout_height="56dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
-        android:text="Dietas Salvas"
+        android:text="Receitas Salvas"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
     <Button
-        android:id="@+id/btnAddDieta"
+        android:id="@+id/btnaddreceita"
         android:layout_width="40dp"
         android:layout_height="43dp"
         android:layout_marginStart="16dp"
