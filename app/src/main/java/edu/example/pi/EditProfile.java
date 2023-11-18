@@ -56,6 +56,31 @@ public class EditProfile extends AppCompatActivity {
                 String password = editsenha.getText().toString();
                 String confirmPassword = editconfirmarsenha.getText().toString();
 
+                // Verifique se algum campo está vazio
+                if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+                    Toast.makeText(EditProfile.this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show();
+                    if (username.isEmpty()) {
+                        editnome.setBackground(ContextCompat.getDrawable(EditProfile.this, R.drawable.edittext_border));
+                    }
+                    if (email.isEmpty()) {
+                        editemail.setBackground(ContextCompat.getDrawable(EditProfile.this, R.drawable.edittext_border));
+                    }
+                    if (password.isEmpty()) {
+                        editsenha.setBackground(ContextCompat.getDrawable(EditProfile.this, R.drawable.edittext_border));
+                    }
+                    if (confirmPassword.isEmpty()) {
+                        editconfirmarsenha.setBackground(ContextCompat.getDrawable(EditProfile.this, R.drawable.edittext_border));
+                    }
+                    return;
+                }
+
+                if (!password.equals(confirmPassword)) {
+                    // Senhas diferentes, exiba uma mensagem de erro
+                    Toast.makeText(EditProfile.this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
+                    editconfirmarsenha.setBackground(ContextCompat.getDrawable(EditProfile.this, R.drawable.edittext_border));
+                    return; // Saia do método para evitar o envio da solicitação
+                }
+
                 User updatedUser = new User(username, email, password);
 
                 atualizarPerfil(updatedUser);
@@ -173,16 +198,6 @@ public class EditProfile extends AppCompatActivity {
         LoginResponse loginResponse = new LoginResponse(accessToken,User);
 
         UserService userService = retrofit.create(UserService.class);
-
-        //Validação das Senhas, caso o usuário insira senhas diferentes essa mensagem será exibida
-        String senha = editsenha.getText().toString();
-        String confirmarSenha = editconfirmarsenha.getText().toString();
-        if (!senha.equals(confirmarSenha)) {
-            // Senhas diferentes, exiba uma mensagem de erro
-            Toast.makeText(EditProfile.this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
-            editconfirmarsenha.setBackground(ContextCompat.getDrawable(EditProfile.this, R.drawable.edittext_border));
-            return; // Saia do método para evitar o envio da solicitação
-        }
 
         // Certifique-se de passar o ID do usuário correto (pode ser obtido do LoginResponse)
         Call<Void> call = userService.atualizarPerfil(loginResponse.getAccessToken(), loginResponse.getUser(), user);
