@@ -22,8 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-       <activity android:name=".Login"></activity>
-        <activity android:name=".Register"></activity>
+       <activity android:name=".Login"></activity><activity android:name=".Register"></activity>
         <activity android:name=".EditProfile"></activity>
         <activity android:name=".Calculadora"></activity>
         <activity android:name=".Home"></activity>
@@ -40,7 +39,9 @@
         <activity android:name=".videos.FlexaoMediana"></activity>
         <activity android:name=".videos.FlexaoSimples"></activity>
         <activity android:name=".videos.Sprinter"></activity>
-
+        <activity android:name=".ConsumoCaloria"></activity>
+        <activity android:name=".ConsumoAgua"></activity>
+        <activity android:name=".GraficoIMC"></activity>
 
         <!--        <activity android:name=".EditProfile"></activity>-->
         <meta-data

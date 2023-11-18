@@ -15,6 +15,7 @@ public class Home extends AppCompatActivity {
     Button btnCalculadora;
     Button btnCalorias;
     Button btnImc;
+    Button btnAgua;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,7 @@ public class Home extends AppCompatActivity {
          btnCalculadora = findViewById(R.id.btnCalculadora);
          btnCalorias = findViewById(R.id.btnCalorias);
          btnImc = findViewById(R.id.btnImc);
+         btnAgua = findViewById(R.id.btnAgua);
 
         userNameTextView  = findViewById(R.id.txtUserName);
 
@@ -35,9 +37,20 @@ public class Home extends AppCompatActivity {
             startActivity(irCalculadora);
         });
 
+        btnCalorias.setOnClickListener( e->{
+            Intent irCalorias = new Intent(Home.this, ConsumoCaloria.class);
+            startActivity(irCalorias);
+        });
 
+        btnAgua.setOnClickListener(e->{
+            Intent irAgua = new Intent(Home.this, ConsumoAgua.class);
+            startActivity(irAgua);
+        });
 
-
+        btnImc.setOnClickListener(e->{
+            Intent irIMC = new Intent(Home.this, GraficoIMC.class);
+            startActivity(irIMC);
+        });
 
     }
 
