@@ -8,10 +8,14 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import edu.example.pi.videos.Abdominal;
+import edu.example.pi.videos.Agachamento_Simples;
+import edu.example.pi.videos.Prancha;
 
 public class MembrosInferioresABS extends AppCompatActivity {
 
     ImageButton btnAbdominal;
+    ImageButton btnPrancha;
+    ImageButton btnAgachamento;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,12 +23,30 @@ public class MembrosInferioresABS extends AppCompatActivity {
         setContentView(R.layout.exercicios_membros_inferiores_abs);
 
         btnAbdominal = findViewById(R.id.btnsalamba);
+        btnPrancha = findViewById(R.id.btnalongcobra);
+        btnAgachamento = findViewById(R.id.btnsprinter);
+
 
 
         btnAbdominal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MembrosInferioresABS.this, Abdominal.class);
+                startActivity(intent);
+            }
+        });
+
+        btnPrancha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MembrosInferioresABS.this, Prancha.class);
+                startActivity(intent);
+            }
+        });
+        btnAgachamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MembrosInferioresABS.this, Agachamento_Simples.class);
                 startActivity(intent);
             }
         });

@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import edu.example.pi.FuncionalAlong;
 import edu.example.pi.R;
 
-public class Sprinter extends AppCompatActivity {
+public class Salamba extends AppCompatActivity {
 
     private VideoView videoView;
     private ImageButton btnvoltar;
@@ -21,11 +21,11 @@ public class Sprinter extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.exercicios_sprinter);
+        setContentView(R.layout.exercicios_salamba);
         btnvoltar = findViewById(R.id.btnvoltar);
 
         videoView = findViewById(R.id.videoView);
-        String videoPath = "android.resource://" + getPackageName()+"/" + R.raw.sprinter;
+        String videoPath = "android.resource://" + getPackageName()+"/" + R.raw.salamba;
 
 
         Uri uri = Uri.parse(videoPath);
@@ -40,7 +40,7 @@ public class Sprinter extends AppCompatActivity {
         btnvoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Sprinter.this, FuncionalAlong.class);
+                Intent intent = new Intent(Salamba.this, FuncionalAlong.class);
                 startActivity(intent);
             }
         });
