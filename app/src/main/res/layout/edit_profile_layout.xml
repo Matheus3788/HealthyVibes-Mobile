@@ -8,7 +8,7 @@
     android:isScrollContainer="false">
 
     <EditText
-        android:id="@+id/editTextText6"
+        android:id="@+id/editconfimasenhaedit"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
@@ -35,11 +35,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText5"
+        app:layout_constraintTop_toBottomOf="@+id/editsenhaedit"
         app:layout_constraintVertical_bias="0.104" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/editsenhaedit"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
@@ -67,11 +67,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+        app:layout_constraintTop_toBottomOf="@+id/editemailedit"
         app:layout_constraintVertical_bias="0.065" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/editemailedit"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:background="@drawable/insert_cadlog"
@@ -97,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:layout_constraintTop_toBottomOf="@+id/editnomeedit"
         app:layout_constraintVertical_bias="0.057" />
 
     <TextView
@@ -130,7 +130,7 @@
         app:layout_constraintVertical_bias="0.064" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editnomeedit"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
@@ -157,7 +157,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText6"
+        app:layout_constraintTop_toBottomOf="@+id/editconfimasenhaedit"
         app:layout_constraintVertical_bias="0.284" />
 
     <Button
@@ -172,13 +172,16 @@
         app:layout_constraintEnd_toEndOf="@+id/btnatualizar"
         app:layout_constraintStart_toStartOf="@+id/btnatualizar"
         app:layout_constraintTop_toBottomOf="@+id/btnatualizar" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

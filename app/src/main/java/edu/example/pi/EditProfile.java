@@ -9,10 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.io.IOException;
 
@@ -26,6 +28,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class EditProfile extends AppCompatActivity {
+    EditText editnome;
+    EditText editemail;
+    EditText editsenha;
+    EditText editconfirmarsenha;
 
     Button btnatualizar;
     Button btnexcliur;
@@ -35,7 +41,30 @@ public class EditProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_profile_layout);
 
+        editnome = findViewById(R.id.editnomeedit);
+        editemail = findViewById(R.id.editemailedit);
+        editsenha = findViewById(R.id.editsenhaedit);
+        editconfirmarsenha = findViewById(R.id.editconfimasenhaedit);
+        btnatualizar = findViewById(R.id.btnatualizar);
+
+
+        btnatualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String username = editnome.getText().toString();
+                String email = editemail.getText().toString();
+                String password = editsenha.getText().toString();
+                String confirmPassword = editconfirmarsenha.getText().toString();
+
+                User updatedUser = new User(username, email, password);
+
+                atualizarPerfil(updatedUser);
+            }
+        });
+
+
         btnexcliur = findViewById(R.id.btnexcluir);
+
 
         btnexcliur.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,6 +157,58 @@ public class EditProfile extends AppCompatActivity {
 
         });
         segundoDialog.show();
+    }
+
+
+    private void atualizarPerfil(User user) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.1.109:3333/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+        String accessToken = sharedPreferences.getString("token", "");
+        String User = sharedPreferences.getString("id", "");
+
+        LoginResponse loginResponse = new LoginResponse(accessToken,User);
+
+        UserService userService = retrofit.create(UserService.class);
+
+        //Validação das Senhas, caso o usuário insira senhas diferentes essa mensagem será exibida
+        String senha = editsenha.getText().toString();
+        String confirmarSenha = editconfirmarsenha.getText().toString();
+        if (!senha.equals(confirmarSenha)) {
+            // Senhas diferentes, exiba uma mensagem de erro
+            Toast.makeText(EditProfile.this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
+            editconfirmarsenha.setBackground(ContextCompat.getDrawable(EditProfile.this, R.drawable.edittext_border));
+            return; // Saia do método para evitar o envio da solicitação
+        }
+
+        // Certifique-se de passar o ID do usuário correto (pode ser obtido do LoginResponse)
+        Call<Void> call = userService.atualizarPerfil(loginResponse.getAccessToken(), loginResponse.getUser(), user);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    String username = editnome.getText().toString();
+
+                    Toast.makeText(EditProfile.this, "Perfil atualizado com sucesso", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(EditProfile.this, Home.class);
+                    intent.putExtra("userName", username);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    // Lidar com falha na atualização
+                    Toast.makeText(EditProfile.this, "Falha ao atualizar perfil", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                // Lidar com falha na comunicação com o servidor
+                Toast.makeText(EditProfile.this, "Falha na comunicação com o servidor", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
