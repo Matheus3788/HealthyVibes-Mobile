@@ -17,6 +17,7 @@ public class FuncionalAlong extends AppCompatActivity {
     ImageButton btnAlongCobra;
     ImageButton btnSprinter;
     ImageButton btnSalamba;
+    ImageButton btnVoltar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,12 @@ public class FuncionalAlong extends AppCompatActivity {
         btnAlongCobra = findViewById(R.id.btnalongcobra);
         btnSprinter = findViewById(R.id.btnsprinter);
         btnSalamba = findViewById(R.id.btnsalamba);
+        btnVoltar = findViewById(R.id.btnvoltar);
 
+        btnVoltar.setOnClickListener(e->{
+            Intent intent = new Intent(FuncionalAlong.this, Exercicio.class);
+            startActivity(intent);
+        });
 
         btnAlongCobra.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -12,27 +12,23 @@
         android:layout_height="53dp"
         android:layout_marginTop="25dp"
         android:background="#00000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="192dp"
-        android:layout_height="81dp"
+        android:layout_width="197dp"
+        android:layout_height="57dp"
         android:fontFamily="@font/montserrat_semibold"
         android:text="Sprinter"
         android:textColor="@color/black"
         android:textSize="38sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.639"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnvoltar"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintTop_toTopOf="@+id/btnvoltar" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -100,8 +96,8 @@
 
     <TextView
         android:id="@+id/textView32"
-        android:layout_width="366dp"
-        android:layout_height="136dp"
+        android:layout_width="360dp"
+        android:layout_height="176dp"
         android:gravity="fill"
         android:text="O Sprint é um treino intervalado de alta intensidade, com duração de 3 minuto. São exercícios intensos, onde a emoção e a motivação vêm para surpreender os limites físicos e mentais. Ele constroi músculos magros e treine seu corpo para queimar gordura e continue queimando calorias por horas após o treino."
         android:textColor="@color/black"

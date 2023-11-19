@@ -12,16 +12,14 @@
         android:layout_height="53dp"
         android:layout_marginTop="25dp"
         android:background="#00000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="285dp"
-        android:layout_height="107dp"
+        android:layout_width="297dp"
+        android:layout_height="89dp"
         android:fontFamily="@font/montserrat_semibold"
         android:text="Alongamento Cobra"
         android:textColor="@color/black"
@@ -108,10 +106,10 @@
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.193" />
+        app:layout_constraintVertical_bias="0.046" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment"

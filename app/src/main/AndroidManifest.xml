@@ -38,14 +38,13 @@
         <activity android:name=".videos.FlexaoMediana"></activity>
         <activity android:name=".videos.FlexaoSimples"></activity>
         <activity android:name=".videos.Sprinter"></activity>
+        <activity android:name=".videos.Salamba"></activity>
         <activity android:name=".ConsumoCaloria"></activity>
         <activity android:name=".ConsumoAgua"></activity>
         <activity android:name=".GraficoIMC"></activity>
-
         <activity android:name=".Receitas.AdicionarReceita"></activity>
         <activity android:name=".Receitas.ReceitasSalvas"></activity>
 
-        <!--        <activity android:name=".EditProfile"></activity>-->
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

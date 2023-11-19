@@ -12,27 +12,23 @@
         android:layout_height="53dp"
         android:layout_marginTop="25dp"
         android:background="#00000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="194dp"
-        android:layout_height="79dp"
+        android:layout_width="198dp"
+        android:layout_height="49dp"
         android:fontFamily="@font/montserrat_semibold"
         android:text="Salamba"
         android:textColor="@color/black"
         android:textSize="38sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnvoltar"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintTop_toTopOf="@+id/btnvoltar" />
 
     <FrameLayout
         android:id="@+id/frameLayout"

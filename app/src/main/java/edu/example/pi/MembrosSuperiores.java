@@ -16,6 +16,7 @@ public class MembrosSuperiores extends AppCompatActivity {
     ImageButton btntriceps;
     ImageButton btnFlexaoMediana;
     ImageButton btnFlexaoSimples;
+    ImageButton btnVoltar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,12 @@ public class MembrosSuperiores extends AppCompatActivity {
         btntriceps = findViewById(R.id.btnsprinter);
         btnFlexaoMediana = findViewById(R.id.btnsalamba);
         btnFlexaoSimples = findViewById(R.id.btnalongcobra);
+        btnVoltar = findViewById(R.id.btnvoltar);
+
+        btnVoltar.setOnClickListener(e->{
+            Intent intent = new Intent(MembrosSuperiores.this, Exercicio.class);
+            startActivity(intent);
+        });
 
         btntriceps.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -16,17 +16,22 @@ public class MembrosInferioresABS extends AppCompatActivity {
     ImageButton btnAbdominal;
     ImageButton btnPrancha;
     ImageButton btnAgachamento;
+    ImageButton btnVoltar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exercicios_membros_inferiores_abs);
 
+        btnVoltar = findViewById(R.id.btnvoltar);
         btnAbdominal = findViewById(R.id.btnsalamba);
         btnPrancha = findViewById(R.id.btnalongcobra);
         btnAgachamento = findViewById(R.id.btnsprinter);
 
-
+        btnVoltar.setOnClickListener(e->{
+            Intent intent = new Intent(MembrosInferioresABS.this, Exercicio.class);
+            startActivity(intent);
+        });
 
         btnAbdominal.setOnClickListener(new View.OnClickListener() {
             @Override
