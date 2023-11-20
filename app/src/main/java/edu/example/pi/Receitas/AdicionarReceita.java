@@ -23,6 +23,7 @@ import edu.example.pi.EditProfile;
 import edu.example.pi.R;
 import edu.example.pi.Register;
 import edu.example.pi.User;
+import edu.example.pi.login.LoginResponse;
 import okhttp3.Headers;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,8 +31,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
 
 
 public class AdicionarReceita extends AppCompatActivity {
@@ -98,7 +101,7 @@ public class AdicionarReceita extends AppCompatActivity {
                 String accessToken = sharedPreferences.getString("token", "");
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://192.168.1.109:3333/") // substitua pela URL correta do seu backend
+                        .baseUrl("https://healthyvibes-rest-api-back-end-production.up.railway.app/") // substitua pela URL correta do seu backend
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 
@@ -113,7 +116,21 @@ public class AdicionarReceita extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<RecipeResponse> call, Response<RecipeResponse> response) {
                         if (response.isSuccessful()) {
+                            RecipeResponse recipeResponse = response.body();
+
                             Toast.makeText(AdicionarReceita.this, "Receita Adicionada com Sucesso", Toast.LENGTH_SHORT).show();
+
+
+// Recupere a lista existente (se houver)
+                            Set<String> idsSalvos = sharedPreferences.getStringSet("chave_dos_ids", new HashSet<>());
+// Adicione o novo ID à lista
+                            idsSalvos.add(recipeResponse.get_ID());
+// Salve a lista atualizada
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putStringSet("idsSalvos", idsSalvos);
+                            editor.apply();
+
+
                         } else {
                             try {
                                 String errorBody = response.errorBody().string();

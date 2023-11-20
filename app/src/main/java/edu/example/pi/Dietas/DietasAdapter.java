@@ -1,4 +1,4 @@
-package edu.example.pi.Receitas;
+package edu.example.pi.Dietas;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -58,7 +58,7 @@ public class Register extends AppCompatActivity {
                 }
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://192.168.1.109:3333/")
+                        .baseUrl("https://healthyvibes-rest-api-back-end-production.up.railway.app/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 

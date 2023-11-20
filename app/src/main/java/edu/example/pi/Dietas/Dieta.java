@@ -1,4 +1,4 @@
-package edu.example.pi.Receitas;
+package edu.example.pi.Dietas;
 
 public class Dieta {
 
