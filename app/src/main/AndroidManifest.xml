@@ -44,6 +44,8 @@
         <activity android:name=".GraficoIMC"></activity>
         <activity android:name=".Receitas.AdicionarReceita"></activity>
         <activity android:name=".Receitas.ReceitasSalvas"></activity>
+        <activity android:name=".Receitas.EditarReceitas"></activity>
+
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,7 +1,9 @@
 package edu.example.pi.Receitas;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +21,8 @@ import java.util.Collections;
 import java.util.List;
 
 import edu.example.pi.EditProfile;
+import edu.example.pi.Home;
+import edu.example.pi.Login;
 import edu.example.pi.R;
 
 public class ReceitasAdapter extends RecyclerView.Adapter<ReceitasAdapter.ViewHolder> {
@@ -49,6 +53,20 @@ public class ReceitasAdapter extends RecyclerView.Adapter<ReceitasAdapter.ViewHo
         Log.i("ID", recipe.get_ID());
         holder.nomeTextView.setText(recipe.getTitulo());  // Substitua com o método real para obter o nome
         holder.periodoTextView.setText(recipe.getPeriodoRef());  // Substitua com o método real para obter o período
+
+
+        holder.btnedit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, EditarReceitas.class);
+                context.startActivity(intent);
+                ((Activity) context).finish();
+                //                intent.putExtra("userName", userName);
+            }
+        });
+
+
 
         holder.btnexclui.setOnClickListener(new View.OnClickListener() {
             @Override
