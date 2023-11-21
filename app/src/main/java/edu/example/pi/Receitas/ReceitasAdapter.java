@@ -14,6 +14,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,12 +57,31 @@ public class ReceitasAdapter extends RecyclerView.Adapter<ReceitasAdapter.ViewHo
         holder.nomeTextView.setText(recipe.getTitulo());  // Substitua com o método real para obter o nome
         holder.periodoTextView.setText(recipe.getPeriodoRef());  // Substitua com o método real para obter o período
 
+        String titulo = recipe.getTitulo();
+        String PeriodoRef = recipe.getPeriodoRef();
+        List<Ingredient> ingredientes = recipe.getIngredientes();
+        int calorias = recipe.getCalorias();
+        int carboidratos = recipe.getCarboidratos();
+        int gordura = recipe.getGordura();
+        int proteina = recipe.getProteina();
+        String mododepreparo = recipe.getModoDePreparo();
+
+
 
         holder.btnedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, EditarReceitas.class);
+                intent.putExtra("titulo", titulo);
+                intent.putExtra("PeriodoRef", PeriodoRef);
+                intent.putExtra("ingredientes", new Gson().toJson(ingredientes)); // Se estiver usando Gson para serialização
+                intent.putExtra("calorias", calorias);
+                intent.putExtra("carboidratos", carboidratos);
+                intent.putExtra("gordura", gordura);
+                intent.putExtra("proteina", proteina);
+                intent.putExtra("mododepreparo", mododepreparo);
+
                 context.startActivity(intent);
                 ((Activity) context).finish();
                 //                intent.putExtra("userName", userName);

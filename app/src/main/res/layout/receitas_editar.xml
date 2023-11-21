@@ -42,7 +42,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/edittextituloedit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -64,7 +64,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText6"
+                android:id="@+id/edittextdificuldadeedit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -86,7 +86,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText8"
+                android:id="@+id/edittextporcoesedit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -109,7 +109,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText9"
+                android:id="@+id/edittextperiodoedit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -142,7 +142,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText12"
+                android:id="@+id/edittextingredpriedit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -165,7 +165,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText14"
+                android:id="@+id/edittextingredsegedit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -187,7 +187,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText16"
+                android:id="@+id/edittextingredteredit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -209,7 +209,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText18"
+                android:id="@+id/edittextingredquaredit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -232,7 +232,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText20"
+                android:id="@+id/edittextcaloriasedit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -254,7 +254,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText22"
+                android:id="@+id/edittextcarboedit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -277,7 +277,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText24"
+                android:id="@+id/edittextgorduraedit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -299,7 +299,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText26"
+                android:id="@+id/edittextproteinaedit"
                 android:layout_width="310dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
@@ -322,7 +322,7 @@
                 android:textSize="22dp" />
 
             <EditText
-                android:id="@+id/editTextText28"
+                android:id="@+id/edittextpreparoedit"
                 android:layout_width="310dp"
                 android:layout_height="200dp"
                 android:layout_marginLeft="25dp"
@@ -330,7 +330,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/shape_formulario_receita"
                 android:ems="10"
-                android:hint="Misstura tudo e manda bala"
+                android:hint="Mistura tudo e manda bala"
                 android:inputType="text"
                 android:paddingStart="12dp" />
 
