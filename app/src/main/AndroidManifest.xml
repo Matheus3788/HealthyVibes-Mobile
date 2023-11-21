@@ -14,7 +14,7 @@
         android:label="HealthyVibes"
         android:roundIcon="@drawable/icon_project"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Pi"
+        android:theme="@style/FullScreen"
         tools:targetApi="31">
         <activity android:name=".Firstpage" android:exported="true">
             <intent-filter>

@@ -46,6 +46,9 @@ public class EditarReceitas extends AppCompatActivity {
         setContentView(R.layout.receitas_editar);
 
 
+
+
+
         editnomeedit = findViewById(R.id.edittextituloedit);
         editdificuldadeedit = findViewById(R.id.edittextdificuldadeedit);
         editporcoesedit = findViewById(R.id.edittextporcoesedit);
