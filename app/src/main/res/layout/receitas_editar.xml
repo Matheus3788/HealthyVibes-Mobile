@@ -353,7 +353,7 @@
     </ScrollView>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView10"
+        android:id="@+id/fragment"
         android:name="edu.example.pi.BarraAtalhosFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
