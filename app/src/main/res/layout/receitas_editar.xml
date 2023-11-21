@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background_geral">
 
     <ScrollView
         android:layout_width="409dp"
@@ -49,9 +50,9 @@
                 android:layout_marginTop="5dp"
                 android:background="@drawable/shape_formulario_receita"
                 android:ems="10"
+                android:hint="Nome"
                 android:inputType="text"
-                android:paddingStart="12dp"
-                android:hint="Nome" />
+                android:paddingStart="12dp" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -352,11 +353,13 @@
     </ScrollView>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView3"
+        android:id="@+id/fragmentContainerView10"
+        android:name="edu.example.pi.BarraAtalhosFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

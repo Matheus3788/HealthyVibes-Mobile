@@ -7,8 +7,7 @@
     <LinearLayout
         android:layout_width="389dp"
         android:layout_height="207dp"
-        android:background="@drawable/insert_cadlog"
-        android:backgroundTint="@color/background_modal_calorias"
+        android:background="@color/background_modal_calorias"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
