@@ -7,6 +7,7 @@ import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
@@ -23,6 +24,10 @@ public interface RecipeService {
 
     @DELETE("/recipes/{id}")
     Call<Void> deleteRecipe(@Header("Authorization") String token, @Path("id") String id);
+
+    @PATCH("/recipes/{id}")
+    Call<Void> atualizarReceita(@Header("Authorization") String token, @Path("id") String recipeId, @Body RecipeRequest recipeRequest
+    );
 
 
 

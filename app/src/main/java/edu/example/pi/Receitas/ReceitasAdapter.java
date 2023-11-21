@@ -66,6 +66,8 @@ public class ReceitasAdapter extends RecyclerView.Adapter<ReceitasAdapter.ViewHo
         int proteina = recipe.getProteina();
         String mododepreparo = recipe.getModoDePreparo();
 
+        String id = recipe.get_ID();
+
 
 
         holder.btnedit.setOnClickListener(new View.OnClickListener() {
@@ -81,10 +83,10 @@ public class ReceitasAdapter extends RecyclerView.Adapter<ReceitasAdapter.ViewHo
                 intent.putExtra("gordura", gordura);
                 intent.putExtra("proteina", proteina);
                 intent.putExtra("mododepreparo", mododepreparo);
+                intent.putExtra("idreceita", id);
 
                 context.startActivity(intent);
                 ((Activity) context).finish();
-                //                intent.putExtra("userName", userName);
             }
         });
 
