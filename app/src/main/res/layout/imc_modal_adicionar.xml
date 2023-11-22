@@ -66,7 +66,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/insert_cadlog"
                 android:ems="10"
-                android:hint="Ex: 1.73"
+                android:hint="Ex: 170 (Em cm)"
                 android:inputType="text"
                 android:paddingLeft="12dp"
                 android:textColor="@color/black" />
@@ -88,7 +88,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnaddimc"
+            android:id="@+id/btnaddimcmodal"
             android:layout_width="154dp"
             android:layout_height="109dp"
             android:layout_gravity="center"
