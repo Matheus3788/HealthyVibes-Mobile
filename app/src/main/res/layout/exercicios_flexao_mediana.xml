@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toEndOf="@+id/btnvoltar"
-        app:layout_constraintTop_toTopOf="@+id/btnvoltar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnvoltar" />
 
     <FrameLayout
         android:id="@+id/frameLayout3"
