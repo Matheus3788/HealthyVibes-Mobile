@@ -41,7 +41,7 @@
         <activity android:name=".videos.Salamba"></activity>
         <activity android:name=".ConsumoCaloria"></activity>
         <activity android:name=".ConsumoAgua"></activity>
-        <activity android:name=".GraficoIMC"></activity>
+        <activity android:name=".Imc.AdicionarImc"></activity>
         <activity android:name=".Receitas.AdicionarReceita"></activity>
         <activity android:name=".Receitas.ReceitasSalvas"></activity>
         <activity android:name=".Receitas.EditarReceitas"></activity>

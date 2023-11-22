@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.example.pi.Imc.AdicionarImc;
+
 public class Home extends AppCompatActivity {
 
     TextView userNameTextView ;
@@ -48,8 +50,9 @@ public class Home extends AppCompatActivity {
         });
 
         btnImc.setOnClickListener(e->{
-            Intent irIMC = new Intent(Home.this, GraficoIMC.class);
+            Intent irIMC = new Intent(Home.this, AdicionarImc.class);
             startActivity(irIMC);
+
         });
 
     }
