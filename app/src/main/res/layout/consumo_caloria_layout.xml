@@ -20,8 +20,8 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="293dp"
-        android:layout_height="252dp"
+        android:layout_width="258dp"
+        android:layout_height="224dp"
         android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/kcal_chart_image" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnadd"
         android:layout_width="144dp"
         android:layout_height="51dp"
         android:layout_marginTop="24dp"
@@ -42,8 +42,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_width="412dp"
+        android:layout_height="207dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintEnd_toEndOf="parent"

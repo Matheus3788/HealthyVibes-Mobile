@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.example.pi.ConsumoAgua.AdicionarAgua;
+import edu.example.pi.ConsumoCalorias.AdicionarCalorias;
 import edu.example.pi.Imc.AdicionarImc;
 
 public class Home extends AppCompatActivity {
@@ -40,12 +42,12 @@ public class Home extends AppCompatActivity {
         });
 
         btnCalorias.setOnClickListener( e->{
-            Intent irCalorias = new Intent(Home.this, ConsumoCaloria.class);
+            Intent irCalorias = new Intent(Home.this, AdicionarCalorias.class);
             startActivity(irCalorias);
         });
 
         btnAgua.setOnClickListener(e->{
-            Intent irAgua = new Intent(Home.this, ConsumoAgua.class);
+            Intent irAgua = new Intent(Home.this, AdicionarAgua.class);
             startActivity(irAgua);
         });
 

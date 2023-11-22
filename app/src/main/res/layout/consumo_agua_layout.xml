@@ -20,26 +20,26 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="293dp"
-        android:layout_height="252dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="244dp"
+        android:layout_height="209dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView36"
         app:srcCompat="@drawable/agua_grafico_imagem" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_width="411dp"
+        android:layout_height="200dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnaddagua"
         android:layout_width="144dp"
         android:layout_height="51dp"
         android:layout_marginTop="24dp"
