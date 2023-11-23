@@ -39,8 +39,8 @@
         <activity android:name=".videos.FlexaoSimples"></activity>
         <activity android:name=".videos.Sprinter"></activity>
         <activity android:name=".videos.Salamba"></activity>
-        <activity android:name=".ConsumoCalorias.AdicionarCalorias"></activity>
-        <activity android:name=".ConsumoAgua.AdicionarAgua"></activity>
+        <activity android:name=".Consumption.ConsumoCalorias.AdicionarCalorias"></activity>
+        <activity android:name=".Consumption.ConsumoAgua.AdicionarAgua"></activity>
         <activity android:name=".Imc.AdicionarImc"></activity>
         <activity android:name=".Receitas.AdicionarReceita"></activity>
         <activity android:name=".Receitas.ReceitasSalvas"></activity>

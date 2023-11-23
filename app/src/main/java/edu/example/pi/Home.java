@@ -9,8 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import edu.example.pi.ConsumoAgua.AdicionarAgua;
-import edu.example.pi.ConsumoCalorias.AdicionarCalorias;
+import edu.example.pi.Consumption.ConsumoAgua.AdicionarAgua;
+import edu.example.pi.Consumption.ConsumoCalorias.AdicionarCalorias;
 import edu.example.pi.Imc.AdicionarImc;
 
 public class Home extends AppCompatActivity {

@@ -2,9 +2,9 @@ package edu.example.pi.Imc;
 
 public class ImcRequest {
     private Double peso;
-    private Double altura;
+    private int altura;
 
-    public ImcRequest(Double peso, Double altura) {
+    public ImcRequest(Double peso, int altura) {
         this.peso = peso;
         this.altura = altura;
     }
@@ -17,11 +17,11 @@ public class ImcRequest {
         this.peso = peso;
     }
 
-    public Double getAltura() {
+    public int getAltura() {
         return altura;
     }
 
-    public void setAltura(Double altura) {
+    public void setAltura(int altura) {
         this.altura = altura;
     }
 }
