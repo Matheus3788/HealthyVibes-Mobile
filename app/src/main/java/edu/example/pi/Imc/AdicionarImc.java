@@ -13,9 +13,12 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import edu.example.pi.EditProfile;
 import edu.example.pi.R;
@@ -32,6 +35,8 @@ public class AdicionarImc extends AppCompatActivity {
 
     Button btnadiciona;
     RecyclerView recyclerView;
+    ImcAdapter adapter;
+    private List<Imc> imcs = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -107,5 +112,26 @@ public class AdicionarImc extends AppCompatActivity {
 
             }
         });
+
+        Imc i1 = new Imc();
+        i1.peso = 81.5;
+        i1.altura = 170;
+        i1.valorImc = (i1.altura * i1.altura) / i1.peso;
+
+
+        Imc i2 = new Imc();
+        i2.peso = 31.5;
+        i2.altura = 190;
+        i2.valorImc = (i2.altura * i2.altura) / i2.peso;
+
+        imcs.add(i1);
+        imcs.add(i2);
+
+
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewImc);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new ImcAdapter(this, imcs);
+        recyclerView.setAdapter(adapter);
     }
 }

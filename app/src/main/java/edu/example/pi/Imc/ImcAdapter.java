@@ -35,6 +35,8 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Imc imc = lista.get(position);
+        holder.txtValorImc.setText(Double.valueOf(imc.valorImc).toString());
+        holder.txtDataImc.setText(imc.data);
 
 
     }
