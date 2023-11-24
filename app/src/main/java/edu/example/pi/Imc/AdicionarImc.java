@@ -22,9 +22,12 @@ import java.util.List;
 
 import edu.example.pi.EditProfile;
 import edu.example.pi.R;
-import edu.example.pi.Receitas.AdicionarReceita;
-import edu.example.pi.Receitas.DeleteRecipe;
-import edu.example.pi.Receitas.RecipeService;
+import edu.example.pi.Imc.ImcAdapter;
+import edu.example.pi.Imc.ImcResponse;
+import edu.example.pi.Imc.ImcService;
+import edu.example.pi.Receitas.ReceitasAdapter;
+import edu.example.pi.Receitas.ReceitasSalvas;
+import edu.example.pi.Receitas.RecipeResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,8 +38,7 @@ public class AdicionarImc extends AppCompatActivity {
 
     Button btnadiciona;
     RecyclerView recyclerView;
-    ImcAdapter adapter;
-    private List<Imc> imcs = new ArrayList<>();
+    private List<ImcResponse> imcList = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class AdicionarImc extends AppCompatActivity {
         setContentView(R.layout.imc_grafico_layout);
 
         btnadiciona = findViewById(R.id.btnaddimc);
+        recyclerView = findViewById(R.id.recyclerViewImc);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         btnadiciona.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,25 +117,79 @@ public class AdicionarImc extends AppCompatActivity {
             }
         });
 
-        Imc i1 = new Imc();
-        i1.peso = 81.5;
-        i1.altura = 170;
-        i1.valorImc = (i1.altura * i1.altura) / i1.peso;
+
+        //Começar a puxar as informações
+        SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+        String token_ = sharedPreferences.getString("token", "");
+        String id_ = sharedPreferences.getString("id", "");
+        Log.d("Teste", id_);
 
 
-        Imc i2 = new Imc();
-        i2.peso = 31.5;
-        i2.altura = 190;
-        i2.valorImc = (i2.altura * i2.altura) / i2.peso;
-
-        imcs.add(i1);
-        imcs.add(i2);
+        String id = "655dda1a68c5277d369a2804";
+        String token = "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTQxNjI1ZTJkNTljMDAxY2Y5MzA0MCIsImlhdCI6MTcwMDgxOTA3NiwiZXhwIjoxNzAwOTA1NDc2fQ.4CyUNSWytRp-CdaYt6iT619XaVroJRaGwnUUywalGiM";
 
 
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewImc);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new ImcAdapter(this, imcs);
-        recyclerView.setAdapter(adapter);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://healthyvibes-rest-api-back-end-production.up.railway.app/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        // Crie uma instância do seu serviço
+        ImcService imcService = retrofit.create(ImcService.class);
+
+        // Faça a chamada para obter a receita específica do usuário
+        Call<List<ImcResponse>> call = imcService.getImcById(token, id);
+
+        call.enqueue(new Callback<List<ImcResponse>>() {
+            @Override
+            public void onResponse(Call<List<ImcResponse>> call, Response<List<ImcResponse>> response) {
+                if (response.isSuccessful()) {
+                    imcList.addAll(response.body());
+                    if (!imcList.isEmpty()) {
+                        // Configurar o RecyclerView com o adapter e lista
+                        ImcAdapter adapter = new ImcAdapter(imcList);
+                        recyclerView.setAdapter(adapter);
+                    } else {
+                        Toast.makeText(AdicionarImc.this, "Lista de IMCS vazia", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    try {
+                        String errorBody = response.errorBody().string();
+                        Log.e("API_RESPONSE", "Error response: " + errorBody);
+                        Toast.makeText(AdicionarImc.this, "Falha ao obter IMC: " + errorBody, Toast.LENGTH_SHORT).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ImcResponse>> call, Throwable t) {
+                if (!isFinishing()) {
+                    Toast.makeText(AdicionarImc.this, "Erro de conexão com a API: " + t.getCause(), Toast.LENGTH_SHORT).show();
+                }            }
+        });
+//show        Imc i1 = new Imc();
+//        i1.peso = 81.5;
+//        i1.altura = 170;
+//        i1.valor = (i1.altura * i1.altura) / i1.peso;
+//
+//
+//        Imc i2 = new Imc();
+//        i2.peso = 31.5;
+//        i2.altura = 190;
+//        i2.valor = (i2.altura * i2.altura) / i2.peso;
+//
+//        imcs.add(i1);
+//        imcs.add(i2);
+//
+//
+//
+//        RecyclerView recyclerView = findViewById(R.id.recyclerViewImc);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        adapter = new ImcAdapter(this, imcs);
+//        recyclerView.setAdapter(adapter);
     }
 }

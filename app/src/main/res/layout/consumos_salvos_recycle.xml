@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView45"
         app:layout_constraintVertical_bias="0.031" />
 
-    <TextView
+      <TextView
         android:id="@+id/textviewquant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

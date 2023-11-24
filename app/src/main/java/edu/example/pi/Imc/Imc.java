@@ -4,7 +4,7 @@ public class Imc {
 
     Double peso;
     Integer altura;
-    Double valorImc;
+    Double valor;
     String data;
 
     public Double getPeso() {
@@ -23,12 +23,12 @@ public class Imc {
         this.altura = altura;
     }
 
-    public Double getValorImc() {
-        return valorImc;
+    public Double getValor() {
+        return valor;
     }
 
-    public void setValorImc(Double valorImc) {
-        this.valorImc = valorImc;
+    public void setValor(Double valorImc) {
+        this.valor = valor;
     }
 
     public String getData() {

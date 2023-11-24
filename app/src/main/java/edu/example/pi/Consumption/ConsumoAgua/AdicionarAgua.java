@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.IOException;
 
@@ -32,6 +34,8 @@ public class AdicionarAgua extends AppCompatActivity {
 
     Button btnadd;
 
+    RecyclerView recyclerView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,8 @@ public class AdicionarAgua extends AppCompatActivity {
 
 
         btnadd = findViewById(R.id.btnaddagua);
+        recyclerView = findViewById(R.id.recyclerViewAgua);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
         btnadd.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +70,7 @@ public class AdicionarAgua extends AppCompatActivity {
                         String accessToken = sharedPreferences.getString("token", "");
 
                         Retrofit retrofit = new Retrofit.Builder()
-                                .baseUrl("https://healthyvibes-rest-api-back-end-production.up.railway.app/") // substitua pela URL correta do seu backend
+                                .baseUrl("https://healthyvibes-rest-api-back-end-production.up.railway.app/")
                                 .addConverterFactory(GsonConverterFactory.create())
                                 .build();
 

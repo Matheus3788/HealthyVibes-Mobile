@@ -30,7 +30,7 @@
         app:srcCompat="@drawable/agua_grafico_imagem" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
+        android:id="@+id/recyclerViewAgua"
         android:layout_width="411dp"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
