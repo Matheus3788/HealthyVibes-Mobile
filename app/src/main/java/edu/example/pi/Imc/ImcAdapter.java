@@ -1,20 +1,33 @@
 package edu.example.pi.Imc;
 
 import java.text.SimpleDateFormat;
+
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.example.pi.R;
+import edu.example.pi.Receitas.DeleteRecipe;
+import edu.example.pi.Receitas.EditarReceitas;
 import edu.example.pi.Receitas.RecipeResponse;
 
 public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
@@ -52,7 +65,59 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
         holder.txtValorImc.setText(Double.valueOf(imc.getValor()).toString());
         holder.txtDataImc.setText(formattedDate);
 
+        int altura = imc.getAltura();
+        double peso = imc.getPeso();
+
+        holder.btneditarimc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(v.getContext());
+
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setCancelable(true);
+                dialog.setContentView(R.layout.imc_modal_editar);
+                dialog.show();
+
+                Button btneditimcmodal = dialog.findViewById(R.id.btneditimc);
+                EditText editaltura = dialog.findViewById(R.id.editaltura);
+                EditText editpeso = dialog.findViewById(R.id.editpeso);
+
+                btneditimcmodal.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+
+                    }
+                    });
+                }
+        });
+
+        holder.btnexcluirimc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(v.getContext());
+
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setCancelable(true);
+                dialog.setContentView(R.layout.imc_modal_excluir);
+                Button btnexcluirimc = dialog.findViewById(R.id.btnexcluirimc);
+
+
+                btnexcluirimc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DeleteImc deleteImc = new DeleteImc(v.getContext());
+                        deleteImc.onImcDelete(imc.get_id());
+
+
+                    }
+                });
+                dialog.show();
+            }
+        });
+
     }
+
 
 
     @Override
@@ -64,11 +129,16 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtValorImc;
         TextView txtDataImc;
+        Button btnexcluirimc;
+
+        Button btneditarimc;
 
         public ViewHolder(View itemView) {
             super(itemView);
             txtValorImc = itemView.findViewById(R.id.txtImcValor);
             txtDataImc = itemView.findViewById(R.id.txtImcData);
+            btnexcluirimc = itemView.findViewById(R.id.btnImcExcluir);
+            btneditarimc = itemView.findViewById(R.id.btnImcEditar);
 
         }
     }

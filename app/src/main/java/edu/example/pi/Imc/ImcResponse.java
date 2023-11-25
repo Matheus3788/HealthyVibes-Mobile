@@ -4,13 +4,21 @@ import java.sql.Timestamp;
 
 
 public class ImcResponse {
-    private String id;
+    private String _id;
     private double valor;
     private double peso;
-    private double altura;
+    private int altura;
     private Timestamp createdAt;
 
     private  Timestamp updateAt;
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
 
     public Timestamp getCreatedAt() {
         return createdAt;
@@ -28,13 +36,6 @@ public class ImcResponse {
         this.updateAt = updateAt;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public double getValor() {
         return valor;
@@ -52,11 +53,11 @@ public class ImcResponse {
         this.peso = peso;
     }
 
-    public double getAltura() {
+    public int getAltura() {
         return altura;
     }
 
-    public void setAltura(double altura) {
+    public void setAltura(int altura) {
         this.altura = altura;
     }
 }

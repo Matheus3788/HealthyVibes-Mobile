@@ -7,6 +7,7 @@ import edu.example.pi.Receitas.RecipeResponse;
 import edu.example.pi.User;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
@@ -18,5 +19,8 @@ public interface ImcService {
 
     @GET("/imcs/myImcs")
     Call<List<ImcResponse>> getImc(@Header("Authorization") String token);
+
+    @DELETE("/imcs/{id}")
+    Call<Void> deleteImc(@Header("Authorization") String token, @Path("id") String _id);
 
 }

@@ -3,7 +3,7 @@ package edu.example.pi.Imc;
 import java.sql.Timestamp;
 
 public class Imc {
-    private String id;
+    private String _id;
     private double peso;
     private int altura;
     private double valor;
@@ -11,6 +11,14 @@ public class Imc {
     private Timestamp createdAt;
 
     private  Timestamp updateAt;
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
 
     public Timestamp getCreatedAt() {
         return createdAt;
@@ -28,13 +36,7 @@ public class Imc {
         this.updateAt = updateAt;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public double getPeso() {
         return peso;
