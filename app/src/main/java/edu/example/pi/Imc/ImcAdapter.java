@@ -1,5 +1,6 @@
 package edu.example.pi.Imc;
 
+import java.text.SimpleDateFormat;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -44,8 +45,12 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ImcResponse imc = imcList.get(position);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = sdf.format(imc.getCreatedAt());
+
         holder.txtValorImc.setText(Double.valueOf(imc.getValor()).toString());
-        holder.txtDataImc.setText((CharSequence) imc.getTimestamp());
+        holder.txtDataImc.setText(formattedDate);
 
     }
 

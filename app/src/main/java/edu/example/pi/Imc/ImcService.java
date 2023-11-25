@@ -16,7 +16,7 @@ public interface ImcService {
     @POST("/imcs")
     Call<Void> enviarImc(@Header("Authorization") String token, @Body ImcRequest imcRequest);
 
-    @GET("/imcs/{id}")
-    Call<List<ImcResponse>> getImcById(@Header("Authorization") String token, @Path("id") String id);
+    @GET("/imcs/myImcs")
+    Call<List<ImcResponse>> getImc(@Header("Authorization") String token);
 
 }

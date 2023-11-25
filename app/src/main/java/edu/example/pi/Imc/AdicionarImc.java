@@ -120,14 +120,7 @@ public class AdicionarImc extends AppCompatActivity {
 
         //Começar a puxar as informações
         SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
-        String token_ = sharedPreferences.getString("token", "");
-        String id_ = sharedPreferences.getString("id", "");
-        Log.d("Teste", id_);
-
-
-        String id = "655dda1a68c5277d369a2804";
-        String token = "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTQxNjI1ZTJkNTljMDAxY2Y5MzA0MCIsImlhdCI6MTcwMDgxOTA3NiwiZXhwIjoxNzAwOTA1NDc2fQ.4CyUNSWytRp-CdaYt6iT619XaVroJRaGwnUUywalGiM";
-
+        String token = sharedPreferences.getString("token", "");
 
 
 
@@ -140,7 +133,7 @@ public class AdicionarImc extends AppCompatActivity {
         ImcService imcService = retrofit.create(ImcService.class);
 
         // Faça a chamada para obter a receita específica do usuário
-        Call<List<ImcResponse>> call = imcService.getImcById(token, id);
+        Call<List<ImcResponse>> call = imcService.getImc(token);
 
         call.enqueue(new Callback<List<ImcResponse>>() {
             @Override

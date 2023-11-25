@@ -1,41 +1,63 @@
 package edu.example.pi.Imc;
 
+import java.sql.Timestamp;
+
 public class Imc {
+    private String id;
+    private double peso;
+    private int altura;
+    private double valor;
 
-    Double peso;
-    Integer altura;
-    Double valor;
-    String data;
+    private Timestamp createdAt;
 
-    public Double getPeso() {
+    private  Timestamp updateAt;
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Timestamp getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(Timestamp updateAt) {
+        this.updateAt = updateAt;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public double getPeso() {
         return peso;
     }
 
-    public void setPeso(Double peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
-    public Integer getAltura() {
+    public int getAltura() {
         return altura;
     }
 
-    public void setAltura(Integer altura) {
+    public void setAltura(int altura) {
         this.altura = altura;
     }
 
-    public Double getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(Double valorImc) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
 }

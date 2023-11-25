@@ -8,31 +8,24 @@ public class ImcResponse {
     private double valor;
     private double peso;
     private double altura;
-    private Timestamp timestamp;
+    private Timestamp createdAt;
 
+    private  Timestamp updateAt;
 
-    public ImcResponse(double valor, Timestamp timestamp) {
-        this.valor = valor;
-        this.timestamp = timestamp;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public ImcResponse(String id, double valor, double peso, double altura, Timestamp timestamp)
- {
-        this.id = id;
-        this.valor = valor;
-        this.peso = peso;
-        this.altura = altura;
-        this.timestamp = timestamp;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-
-
-    public Timestamp getTimestamp() {
-        return timestamp;
+    public Timestamp getUpdateAt() {
+        return updateAt;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
+    public void setUpdateAt(Timestamp updateAt) {
+        this.updateAt = updateAt;
     }
 
     public String getId() {
