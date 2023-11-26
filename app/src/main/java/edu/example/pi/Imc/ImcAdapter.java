@@ -83,6 +83,8 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
                 EditText editaltura = dialog.findViewById(R.id.editaltura);
                 EditText editpeso = dialog.findViewById(R.id.editpeso);
 
+                ImageButton btncloseedit = dialog.findViewById(R.id.btncloseeditimc);
+
                 editaltura.setText(String.valueOf(imc.getAltura()));
                 editpeso.setText(String.valueOf(imc.getPeso()));
 
@@ -98,7 +100,20 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
 
                     }
                     });
+
+                btncloseedit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+
+
+
                 }
+
+
         });
 
         holder.btnexcluirimc.setOnClickListener(new View.OnClickListener() {

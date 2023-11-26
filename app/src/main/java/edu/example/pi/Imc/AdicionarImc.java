@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -59,6 +60,7 @@ public class AdicionarImc extends AppCompatActivity {
                 dialog.setContentView(R.layout.imc_modal_adicionar);
                 dialog.show();
 
+                ImageButton btncloseaddimc = dialog.findViewById(R.id.btncloseaddimc);
                 Button btnaddimcmodal = dialog.findViewById(R.id.btnaddimcmodal);
                 EditText editaddaltura = dialog.findViewById(R.id.editaddaltura);
                 EditText editaddpeso = dialog.findViewById(R.id.editaddpeso);
@@ -114,6 +116,12 @@ public class AdicionarImc extends AppCompatActivity {
                 });
 
 
+                btncloseaddimc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
             }
         });
 

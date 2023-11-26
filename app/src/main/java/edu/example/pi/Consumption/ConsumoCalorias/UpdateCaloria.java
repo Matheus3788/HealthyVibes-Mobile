@@ -55,9 +55,9 @@ public class UpdateCaloria implements OnCaloriaUpdateListener {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
-                    Log.v("Sucess", "Água Atualzada com sucesso!");
+                    Log.v("Sucess", "Caloria Atualzada com sucesso!");
                 } else {
-                    Log.e("Erro1", "Água não encontrada");
+                    Log.e("Erro1", "Caloria não encontrada");
                     try {
                         Log.e("Erro", "Corpo da resposta: " + response.errorBody().string());
                     } catch (IOException e) {
