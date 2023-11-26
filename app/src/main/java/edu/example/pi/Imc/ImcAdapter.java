@@ -68,6 +68,7 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
         int altura = imc.getAltura();
         double peso = imc.getPeso();
 
+
         holder.btneditarimc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,10 +83,18 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
                 EditText editaltura = dialog.findViewById(R.id.editaltura);
                 EditText editpeso = dialog.findViewById(R.id.editpeso);
 
+                editaltura.setText(String.valueOf(imc.getAltura()));
+                editpeso.setText(String.valueOf(imc.getPeso()));
+
                 btneditimcmodal.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
+                        int novaaltura = Integer.parseInt(editaltura.getText().toString());
+                        double novopeso = Double.parseDouble(editpeso.getText().toString());
+
+                        UpdateImc updateImc = new UpdateImc(v.getContext());
+                        updateImc.onImcUpdate(imc.get_id(), novaaltura, novopeso);
 
                     }
                     });
@@ -106,6 +115,9 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
                 btnexcluirimc.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        TextView data = dialog.findViewById(R.id.textView26);
+                        data.setText("Deseja excluir a informação do dia " + formattedDate);
+
                         DeleteImc deleteImc = new DeleteImc(v.getContext());
                         deleteImc.onImcDelete(imc.get_id());
 
