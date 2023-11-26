@@ -13,15 +13,19 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.IOException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
-import edu.example.pi.Consumption.ConsumoAgua.AdicionarAgua;
 import edu.example.pi.Consumption.ConsumptionService;
 import edu.example.pi.Consumption.ConsumptionsRequest;
+import edu.example.pi.Consumption.ConsumptionsResponse;
 import edu.example.pi.R;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,12 +37,17 @@ public class AdicionarCalorias extends AppCompatActivity {
 
     Button addcal;
 
+    RecyclerView recyclerView;
+    private List<ConsumptionsResponse> calList = new ArrayList<>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.consumo_caloria_layout);
 
         addcal = findViewById(R.id.btnadd);
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         addcal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +117,54 @@ public class AdicionarCalorias extends AppCompatActivity {
                 });
 
             }
+        });
+
+        //Começar a puxar as informações
+        SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+        String token = sharedPreferences.getString("token", "");
+
+
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://healthyvibes-rest-api-back-end-production.up.railway.app/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        // Crie uma instância do seu serviço
+        ConsumptionService consumptionService = retrofit.create(ConsumptionService.class);
+
+        // Faça a chamada para obter a receita específica do usuário
+        Call<List<ConsumptionsResponse>> call = consumptionService.getCalorias(token);
+
+
+        call.enqueue(new Callback<List<ConsumptionsResponse>>() {
+            @Override
+            public void onResponse(Call<List<ConsumptionsResponse>> call, Response<List<ConsumptionsResponse>> response) {
+                if (response.isSuccessful()) {
+                    calList.addAll(response.body());
+                    if (!calList.isEmpty()) {
+                        // Configurar o RecyclerView com o adapter e lista
+                        CaloriaAdapter adapter = new CaloriaAdapter(calList);
+                        recyclerView.setAdapter(adapter);
+                    } else {
+                        Toast.makeText(AdicionarCalorias.this, "Lista de Calorias vazia", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    try {
+                        String errorBody = response.errorBody().string();
+                        Log.e("API_RESPONSE", "Error response: " + errorBody);
+                        Toast.makeText(AdicionarCalorias.this, "Falha ao obter Calorias: " + errorBody, Toast.LENGTH_SHORT).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ConsumptionsResponse>> call, Throwable t) {
+                if (!isFinishing()) {
+                    Toast.makeText(AdicionarCalorias.this, "Erro de conexão com a API: " + t.getCause(), Toast.LENGTH_SHORT).show();
+                }            }
         });
 
 

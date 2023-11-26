@@ -1,4 +1,5 @@
-package edu.example.pi.Consumption.ConsumoAgua;
+package edu.example.pi.Consumption.ConsumoCalorias;
+
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,29 +8,28 @@ import android.util.Log;
 import java.io.IOException;
 
 import edu.example.pi.Consumption.ConsumptionService;
-import edu.example.pi.Imc.ImcService;
+import edu.example.pi.Consumption.ConsumptionsRequest;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class DeleteAgua implements OnAguaDeleteListener{
+public class UpdateCaloria implements OnCaloriaUpdateListener {
 
     private final String token;
 
     private final String user;
 
 
-
-    public DeleteAgua(Context context) {
+    public UpdateCaloria(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("Login", Context.MODE_PRIVATE);
         token = sharedPreferences.getString("token", "");
         user = sharedPreferences.getString("id", "");
 
     }
 
-    private ConsumptionService createAguaService() {
+    private ConsumptionService createCaloriaService() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://healthyvibes-rest-api-back-end-production.up.railway.app/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -40,26 +40,24 @@ public class DeleteAgua implements OnAguaDeleteListener{
     }
 
     @Override
-    public void onAguaDelete(String Aguaid) {
-        ConsumptionService consumptionService = createAguaService();
+    public void onCaloriaUpdate(String calid, int novaquant) {
 
-        String id = Aguaid;
+        ConsumptionService ConsumptionService = createCaloriaService();
 
-        Log.d("uinha", Aguaid);
-        Log.d("N aguinha", id);
-        Log.d("Token", token);
+        String id = calid;
 
+        int quant = novaquant;
 
+        ConsumptionsRequest consumptionsRequest = new ConsumptionsRequest(quant);
 
-        Call<Void> call = consumptionService.delete(token, id);
+        Call<Void> call = ConsumptionService.atualizar(token, id, consumptionsRequest);
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
-                    Log.v("Erro1", "Agua excluída com sucesso!");
+                    Log.v("Sucess", "Água Atualzada com sucesso!");
                 } else {
-                    Log.e("Erro1", "Falha ao excluir a Água. Código de resposta: " + response.code());
-
+                    Log.e("Erro1", "Água não encontrada");
                     try {
                         Log.e("Erro", "Corpo da resposta: " + response.errorBody().string());
                     } catch (IOException e) {
@@ -70,11 +68,10 @@ public class DeleteAgua implements OnAguaDeleteListener{
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                Log.e("Erro2", "Erro na conexão com o servidor!", t);
+                // Ocorreu uma falha na requisição
+                // Adicione lógica para lidar com falhas de comunicação
             }
         });
-
     }
-
 
 }

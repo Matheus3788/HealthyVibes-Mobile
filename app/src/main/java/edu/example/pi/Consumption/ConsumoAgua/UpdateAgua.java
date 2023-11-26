@@ -50,7 +50,7 @@ public class UpdateAgua implements OnAguaUpdateListener {
 
         ConsumptionsRequest consumptionsRequest = new ConsumptionsRequest(quant);
 
-        Call<Void> call = ConsumptionService.atualizarAgua(token, id, consumptionsRequest);
+        Call<Void> call = ConsumptionService.atualizar(token, id, consumptionsRequest);
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {

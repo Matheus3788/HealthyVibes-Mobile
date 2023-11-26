@@ -31,23 +31,15 @@
 
             <TextView
                 android:id="@+id/textView27"
-                android:layout_width="8dp"
+                android:layout_width="37dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="75dp"
                 android:layout_weight="1"
                 android:text="Quantidade"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="79dp"
-                android:layout_weight="1"
-                android:text="Horário"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -57,10 +49,10 @@
 
             <EditText
                 android:id="@+id/editquant"
-                android:layout_width="182dp"
+                android:layout_width="254dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="45dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/insert_cadlog"
@@ -70,20 +62,6 @@
                 android:paddingLeft="12dp"
                 android:textColor="@color/black" />
 
-            <EditText
-                android:id="@+id/edithorario"
-                android:layout_width="182dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/insert_cadlog"
-                android:ems="10"
-                android:hint="12:43"
-                android:inputType="text"
-                android:paddingLeft="12dp"
-                android:textColor="@color/black" />
         </LinearLayout>
 
         <Button

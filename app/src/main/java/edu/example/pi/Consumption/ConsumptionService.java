@@ -22,12 +22,15 @@ public interface ConsumptionService {
     @GET("/consumptions/myConsumptions/water")
     Call<List<ConsumptionsResponse>> getAgua(@Header("Authorization") String token);
 
+    @GET("/consumptions/myConsumptions/cal")
+    Call<List<ConsumptionsResponse>> getCalorias(@Header("Authorization") String token);
+
     @PATCH("/consumptions/{id}")
-    Call<Void> atualizarAgua(@Header("Authorization") String token, @Path("id") String _id, @Body ConsumptionsRequest consumptionsRequest
+    Call<Void> atualizar(@Header("Authorization") String token, @Path("id") String _id, @Body ConsumptionsRequest consumptionsRequest
     );
 
     @DELETE("/consumptions/{id}")
-    Call<Void> deleteAgua(@Header("Authorization") String token, @Path("id") String _id);
+    Call<Void> delete(@Header("Authorization") String token, @Path("id") String _id);
 
 
 }
