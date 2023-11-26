@@ -16,6 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import edu.example.pi.Consumption.ConsumoAgua.AdicionarAgua;
 import edu.example.pi.Consumption.ConsumptionService;
 import edu.example.pi.Consumption.ConsumptionsRequest;
@@ -50,6 +53,12 @@ public class AdicionarCalorias extends AppCompatActivity {
                 EditText edittextcalorias = dialog.findViewById(R.id.editaddquantcal);
                 Button btnaddcal = dialog.findViewById(R.id.btnaddcal);
 
+                LocalDate currentDate = LocalDate.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+                // Formata e imprime a data atual
+                String formattedDate = currentDate.format(formatter);
+
                 btnaddcal.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -67,7 +76,7 @@ public class AdicionarCalorias extends AppCompatActivity {
                                 .build();
 
                         ConsumptionService consumptionService = retrofit.create(ConsumptionService.class);
-                        ConsumptionsRequest consumptionsRequest = new ConsumptionsRequest(quantidade, tipoConsumo);
+                        ConsumptionsRequest consumptionsRequest = new ConsumptionsRequest(quantidade, tipoConsumo, formattedDate);
 
                         Call<Void> call = consumptionService.adicionarconsumptions(accessToken, consumptionsRequest);
                         call.enqueue(new Callback<Void>() {
@@ -100,6 +109,10 @@ public class AdicionarCalorias extends AppCompatActivity {
 
             }
         });
+
+
+
+
 
     }
 }
