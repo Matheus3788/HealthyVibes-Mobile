@@ -111,12 +111,13 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
                 dialog.setContentView(R.layout.imc_modal_excluir);
                 Button btnexcluirimc = dialog.findViewById(R.id.btnexcluirimc);
 
+                TextView data = dialog.findViewById(R.id.textView26);
+                data.setText("Deseja excluir a informação do dia " + formattedDate);
+
 
                 btnexcluirimc.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        TextView data = dialog.findViewById(R.id.textView26);
-                        data.setText("Deseja excluir a informação do dia " + formattedDate);
 
                         DeleteImc deleteImc = new DeleteImc(v.getContext());
                         deleteImc.onImcDelete(imc.get_id());

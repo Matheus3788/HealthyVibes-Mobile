@@ -16,6 +16,10 @@ public class ConsumptionsRequest {
         this.belongDate = belongDate;
     }
 
+    public ConsumptionsRequest(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
     public String getBelongDate() {
         return belongDate;
     }

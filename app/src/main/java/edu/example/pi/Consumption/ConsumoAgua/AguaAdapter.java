@@ -1,6 +1,7 @@
 package edu.example.pi.Consumption.ConsumoAgua;
 
 import android.app.Dialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,62 @@ public class AguaAdapter extends RecyclerView.Adapter<AguaAdapter.ViewHolder> {
         holder.txtquant.setText(String.valueOf(agua.getQuantidade()));
         holder.txtdata.setText(formattedDate);
 
+        int quantidade = agua.getQuantidade();
+
+        holder.btneditaragua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(v.getContext());
+
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setCancelable(true);
+                dialog.setContentView(R.layout.agua_modal_editar);
+                dialog.show();
+
+                Button btneditaguamodal = dialog.findViewById(R.id.btnatualizaragua);
+                EditText editquant = dialog.findViewById(R.id.editquant);
+
+                editquant.setText(String.valueOf(agua.getQuantidade()));
+
+                btneditaguamodal.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        int novaquant = Integer.parseInt(editquant.getText().toString());
+
+                        UpdateAgua updateAgua = new UpdateAgua(v.getContext());
+                        updateAgua.onAguaUpdate(agua.get_id(), novaquant);
+
+                    }
+                });
+            }
+        });
+
+        holder.btnexcluiragua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(v.getContext());
+
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setCancelable(true);
+                dialog.setContentView(R.layout.agua_modal_excluir);
+                Button btnexcluiragua = dialog.findViewById(R.id.btnexcluiragua);
+                TextView data = dialog.findViewById(R.id.textView26);
+                data.setText("Deseja excluir a informação das: " + formattedDate);
+
+
+                btnexcluiragua.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DeleteAgua deleteAgua = new DeleteAgua(v.getContext());
+                        deleteAgua.onAguaDelete(agua.get_id());
+
+                    }
+                });
+                dialog.show();
+            }
+        });
+
     }
 
 
@@ -62,15 +119,15 @@ public class AguaAdapter extends RecyclerView.Adapter<AguaAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtquant;
         TextView txtdata;
-        ImageButton btnexcluirimc;
-        ImageButton btneditarimc;
+        ImageButton btnexcluiragua;
+        ImageButton btneditaragua;
 
         public ViewHolder(View itemView) {
             super(itemView);
             txtquant = itemView.findViewById(R.id.textviewquant);
             txtdata = itemView.findViewById(R.id.textviewhorario);
-            btnexcluirimc = itemView.findViewById(R.id.imageButton2);
-            btneditarimc = itemView.findViewById(R.id.imageButton);
+            btnexcluiragua = itemView.findViewById(R.id.imageButton2);
+            btneditaragua = itemView.findViewById(R.id.imageButton);
 
         }
     }
