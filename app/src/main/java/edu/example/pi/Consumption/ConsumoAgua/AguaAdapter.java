@@ -102,6 +102,7 @@ public class AguaAdapter extends RecyclerView.Adapter<AguaAdapter.ViewHolder> {
                 TextView data = dialog.findViewById(R.id.textView26);
                 data.setText("Deseja excluir a informação das: " + formattedDate);
 
+                ImageButton closeexcluiragua = dialog.findViewById(R.id.closeexcluiragua);
 
 
                 btnexcluiragua.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +117,12 @@ public class AguaAdapter extends RecyclerView.Adapter<AguaAdapter.ViewHolder> {
 
                 dialog.show();
 
+                closeexcluiragua.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
 
             }
         });
