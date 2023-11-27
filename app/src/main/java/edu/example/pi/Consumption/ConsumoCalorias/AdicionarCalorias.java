@@ -2,6 +2,7 @@ package edu.example.pi.Consumption.ConsumoCalorias;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -61,6 +63,7 @@ public class AdicionarCalorias extends AppCompatActivity {
 
                 EditText edittextcalorias = dialog.findViewById(R.id.editaddquantcal);
                 Button btnaddcal = dialog.findViewById(R.id.btnaddcal);
+                ImageButton btncloseaddcal = dialog.findViewById(R.id.btncloseaddcal);
 
                 LocalDate currentDate = LocalDate.now();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -94,6 +97,9 @@ public class AdicionarCalorias extends AppCompatActivity {
                                 if (response.isSuccessful()) {
                                     Toast.makeText(AdicionarCalorias.this, "Consumo de Calorias adicionado com sucesso!", Toast.LENGTH_SHORT).show();
 
+                                    Intent recarregar = new Intent(AdicionarCalorias.this, AdicionarCalorias.class);
+                                    startActivity(recarregar);
+
                                 } else {
                                     try {
                                         // Tente obter a mensagem de erro do corpo da resposta
@@ -113,6 +119,13 @@ public class AdicionarCalorias extends AppCompatActivity {
                                 Toast.makeText(AdicionarCalorias.this, "Falha na Requisição", Toast.LENGTH_SHORT).show();
                             }
                         });
+                    }
+                });
+
+                btncloseaddcal.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
                     }
                 });
 

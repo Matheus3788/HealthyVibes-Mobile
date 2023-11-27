@@ -2,6 +2,7 @@ package edu.example.pi.Imc;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -92,7 +93,8 @@ public class AdicionarImc extends AppCompatActivity {
                             public void onResponse(Call<Void> call, Response<Void> response) {
                                 if (response.isSuccessful()) {
                                     Toast.makeText(AdicionarImc.this, "IMC adicionado com sucesso!", Toast.LENGTH_SHORT).show();
-
+                                    Intent recarregar = new Intent(AdicionarImc.this, AdicionarImc.class);
+                                    startActivity(recarregar);
                                 } else {
                                     try {
                                         // Tente obter a mensagem de erro do corpo da resposta

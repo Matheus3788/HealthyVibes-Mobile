@@ -2,6 +2,7 @@ package edu.example.pi.Consumption.ConsumoCalorias;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 
@@ -56,6 +57,7 @@ public class UpdateCaloria implements OnCaloriaUpdateListener {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
                     Log.v("Sucess", "Caloria Atualzada com sucesso!");
+
                 } else {
                     Log.e("Erro1", "Caloria não encontrada");
                     try {

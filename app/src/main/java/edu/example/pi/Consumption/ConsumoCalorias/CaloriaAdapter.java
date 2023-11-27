@@ -1,6 +1,8 @@
 package edu.example.pi.Consumption.ConsumoCalorias;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,6 +61,7 @@ public class CaloriaAdapter extends RecyclerView.Adapter<CaloriaAdapter.ViewHold
 
                 Button btneditcalmodal = dialog.findViewById(R.id.btnatualizarcal);
                 EditText editquant = dialog.findViewById(R.id.editquant);
+                ImageButton btncloseeditcal = dialog.findViewById(R.id.btncloseeditcal);
 
                 editquant.setText(String.valueOf(cal.getQuantidade()));
 
@@ -70,7 +73,13 @@ public class CaloriaAdapter extends RecyclerView.Adapter<CaloriaAdapter.ViewHold
 
                         UpdateCaloria updateCaloria = new UpdateCaloria(v.getContext());
                         updateCaloria.onCaloriaUpdate(cal.get_id(), novaquant);
+                    }
+                });
 
+                btncloseeditcal.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
                     }
                 });
             }
@@ -85,9 +94,11 @@ public class CaloriaAdapter extends RecyclerView.Adapter<CaloriaAdapter.ViewHold
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setCancelable(true);
                 dialog.setContentView(R.layout.calorias_modal_excluir);
+
                 Button btnexcluircal = dialog.findViewById(R.id.btnexcluircal);
                 TextView data = dialog.findViewById(R.id.textView26);
                 data.setText("Deseja excluir a informação das: " + formattedDate);
+                ImageButton btnclosedeletecal = dialog.findViewById(R.id.closeexcluircal);
 
 
                 btnexcluircal.setOnClickListener(new View.OnClickListener() {
@@ -95,10 +106,17 @@ public class CaloriaAdapter extends RecyclerView.Adapter<CaloriaAdapter.ViewHold
                     public void onClick(View v) {
                         DeleteCaloria deleteCaloria = new DeleteCaloria(v.getContext());
                         deleteCaloria.onCaloriaDelete(cal.get_id());
-
                     }
                 });
                 dialog.show();
+
+
+                btnclosedeletecal.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
             }
         });
 
