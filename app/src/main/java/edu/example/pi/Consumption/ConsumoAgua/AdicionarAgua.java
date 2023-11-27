@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
     import java.time.LocalDate;
@@ -83,6 +84,8 @@ public class AdicionarAgua extends AppCompatActivity {
                         int quantidade = Integer.parseInt(edittextagua.getText().toString());
                         Log.d("Agua", String.valueOf(quantidade));
 
+                        ImageButton btncloseaddagua = dialog.findViewById(R.id.btncloseaddagua);
+
                         SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
                         String accessToken = sharedPreferences.getString("token", "");
 
@@ -120,6 +123,13 @@ public class AdicionarAgua extends AppCompatActivity {
                             @Override
                             public void onFailure(Call<Void> call, Throwable t) {
                                 Toast.makeText(AdicionarAgua.this, "Falha na Requisição", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                        btncloseaddagua.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
                             }
                         });
                     }
