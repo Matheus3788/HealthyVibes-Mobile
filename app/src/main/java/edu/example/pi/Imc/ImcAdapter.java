@@ -129,6 +129,7 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
                 TextView data = dialog.findViewById(R.id.textView26);
                 data.setText("Deseja excluir a informação do dia " + formattedDate);
 
+                ImageButton closeexcluirimc = dialog.findViewById(R.id.closeexcluirimc);
 
                 btnexcluirimc.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -141,6 +142,13 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
                     }
                 });
                 dialog.show();
+
+                closeexcluirimc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
             }
         });
 
