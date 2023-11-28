@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +45,7 @@ public class EditarReceitas extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.receitas_editar);
+
 
 
 
@@ -100,6 +102,18 @@ public class EditarReceitas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                try {
+
+                    int c = Integer.parseInt(editcaloriasedit.getText().toString());
+                    int ca = Integer.parseInt(editcarboidratosedit.getText().toString());
+                    int g = Integer.parseInt(editgorduraedit.getText().toString());
+                    int p = Integer.parseInt(editproteinaedit.getText().toString());
+
+                } catch (NumberFormatException e) {
+                    Toast.makeText(EditarReceitas.this, "Insira todas as informações e lembre-se caracteres não são aceitos nos campos numéricos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 String novotitulo = editnomeedit.getText().toString();
                 String periodoRef = editperiodoedit.getText().toString();
 
@@ -114,6 +128,19 @@ public class EditarReceitas extends AppCompatActivity {
                 int gordura = Integer.parseInt(editgorduraedit.getText().toString());
 
                 String modoDePreparo = editmododepreparoedit.getText().toString();
+
+                if (novotitulo.isEmpty() || periodoRef.isEmpty() || nomeIngrediente1.isEmpty()
+                        || nomeIngrediente2.isEmpty() || nomeIngrediente3.isEmpty() || nomeIngrediente4.isEmpty()
+                        || editcaloriasedit.getText().toString().isEmpty() || editcarboidratosedit.getText().toString().isEmpty()
+                        || editproteinaedit.getText().toString().isEmpty() || editgorduraedit.getText().toString().isEmpty()
+                        || editmododepreparoedit.getText().toString().isEmpty() || editcaloriasedit.getText().toString().isEmpty() ||
+                           editcarboidratosedit.getText().toString().isEmpty() || editgorduraedit.getText().toString().isEmpty() ||
+                           editproteinaedit.getText().toString().isEmpty()) {
+                    Toast.makeText(EditarReceitas.this, "Insira todas as informações", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
 
 
                 Ingredient ingrediente1 = new Ingredient(nomeIngrediente1);

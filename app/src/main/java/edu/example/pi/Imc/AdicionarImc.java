@@ -69,11 +69,21 @@ public class AdicionarImc extends AppCompatActivity {
                 btnaddimcmodal.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        String alturaText = editaddaltura.getText().toString();
+                        String pesoText = editaddpeso.getText().toString();
+
+                        if (alturaText.isEmpty() || pesoText.isEmpty()) {
+                            Toast.makeText(AdicionarImc.this, "Insira altura e peso", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
                         int altura = Integer.valueOf(editaddaltura.getText().toString());
                         Double peso = Double.valueOf(editaddpeso.getText().toString());
 
                         Log.d("peso", String.valueOf(peso));
                         Log.d("Altura", String.valueOf(altura));
+
 
                         SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
                         String accessToken = sharedPreferences.getString("token", "");

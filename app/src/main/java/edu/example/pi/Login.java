@@ -90,7 +90,7 @@ public class Login extends AppCompatActivity {
                     }
                 } else {
                     // O login falhou
-                    Toast.makeText(Login.this, "Erro de Login1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Erro de Login: Dados não Registrados", Toast.LENGTH_SHORT).show();
                 }
             }
 

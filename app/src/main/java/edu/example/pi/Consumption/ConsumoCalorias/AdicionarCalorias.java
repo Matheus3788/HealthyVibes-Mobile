@@ -74,6 +74,13 @@ public class AdicionarCalorias extends AppCompatActivity {
                 btnaddcal.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        String caloriasText = edittextcalorias.getText().toString().trim();
+
+                        if (caloriasText.isEmpty()) {
+                            Toast.makeText(AdicionarCalorias.this, "Digite a quantidade de calorias", Toast.LENGTH_SHORT).show();
+                            return; // Exit the method if the field is empty
+                        }
+
                         int quantidade = Integer.parseInt(edittextcalorias.getText().toString());
                         Log.d("Calorias", String.valueOf(quantidade));
 

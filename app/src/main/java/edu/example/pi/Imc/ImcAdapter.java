@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -91,6 +92,13 @@ public class ImcAdapter extends RecyclerView.Adapter<ImcAdapter.ViewHolder>{
                 btneditimcmodal.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        String alturaText = editaltura.getText().toString().trim();
+                        String pesoText = editpeso.getText().toString().trim();
+
+                        if (alturaText.isEmpty() || pesoText.isEmpty()) {
+                            Toast.makeText(v.getContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
                         int novaaltura = Integer.parseInt(editaltura.getText().toString());
                         double novopeso = Double.parseDouble(editpeso.getText().toString());

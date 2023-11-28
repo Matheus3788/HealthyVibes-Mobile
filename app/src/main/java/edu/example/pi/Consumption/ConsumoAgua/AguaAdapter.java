@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -73,10 +74,23 @@ public class AguaAdapter extends RecyclerView.Adapter<AguaAdapter.ViewHolder> {
                     @Override
                     public void onClick(View v) {
 
-                        int novaquant = Integer.parseInt(editquant.getText().toString());
 
-                        UpdateAgua updateAgua = new UpdateAgua(v.getContext());
-                        updateAgua.onAguaUpdate(agua.get_id(), novaquant);
+                        String quantityText = editquant.getText().toString().trim();
+                        if (quantityText.isEmpty()) {
+                            Toast.makeText(v.getContext(), "Digite a quantidade de água", Toast.LENGTH_SHORT).show();
+                            return; // Exit the method if the field is empty
+                        }
+
+                        try {
+                            int novaquant = Integer.parseInt(quantityText);
+
+                            UpdateAgua updateAgua = new UpdateAgua(v.getContext());
+                            updateAgua.onAguaUpdate(agua.get_id(), novaquant);
+
+                            dialog.dismiss();
+                        } catch (NumberFormatException e) {
+                            Toast.makeText(v.getContext(), "Digite um valor numérico válido para a quantidade de água", Toast.LENGTH_SHORT).show();
+                        }
 
                     }
                 });

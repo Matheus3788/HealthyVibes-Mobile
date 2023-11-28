@@ -82,6 +82,14 @@ public class AdicionarAgua extends AppCompatActivity {
                 btnaddagua.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+                        String quantityText = edittextagua.getText().toString().trim();
+
+                        if (quantityText.isEmpty()) {
+                            Toast.makeText(AdicionarAgua.this, "Digite a quantidade de água", Toast.LENGTH_SHORT).show();
+                            return; // Exit the method if the field is empty
+                        }
+
                         int quantidade = Integer.parseInt(edittextagua.getText().toString());
                         Log.d("Agua", String.valueOf(quantidade));
 

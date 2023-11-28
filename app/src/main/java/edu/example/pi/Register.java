@@ -50,12 +50,24 @@ public class Register extends AppCompatActivity {
                 String senha = edtPassword.getText().toString();
                 String confirmarSenha = edtconfpassword.getText().toString();
 
+                if (nome.isEmpty() || email.isEmpty() || senha.isEmpty() || confirmarSenha.isEmpty()) {
+                    Toast.makeText(Register.this, "Insira todas as informações", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if (!senha.equals(confirmarSenha)) {
                     // Senhas diferentes, exiba uma mensagem de erro
                     Toast.makeText(Register.this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
                     edtconfpassword.setBackground(ContextCompat.getDrawable(Register.this, R.drawable.edittext_border));
                     return; // Saia do método para evitar o envio da solicitação
                 }
+
+                if (!isValidEmail(email)) {
+                    Toast.makeText(Register.this, "Formato de email inválido", Toast.LENGTH_SHORT).show();
+                    edtEmail.setBackground(ContextCompat.getDrawable(Register.this, R.drawable.edittext_border)); // Change the background to indicate an error
+                    return;
+                }
+
 
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl("https://healthyvibes-rest-api-back-end-production.up.railway.app/")
@@ -92,6 +104,8 @@ public class Register extends AppCompatActivity {
                 });
             }
         }));
+
+
 
 
 
@@ -143,4 +157,12 @@ public class Register extends AppCompatActivity {
         super.onRestart();
         Log.d("ActivityPrincipal", "on Restart  executado");
     }
+
+    private boolean isValidEmail(String email) {
+        // Adicione sua lógica de validação de email aqui
+        // Neste exemplo, verifica se o email tem pelo menos 24 caracteres, contém "@" e ".com"
+        return email.length() >= 24 && email.contains("@") && email.endsWith(".com");
+    }
 }
+
+

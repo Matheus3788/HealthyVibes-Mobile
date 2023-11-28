@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -68,11 +69,17 @@ public class CaloriaAdapter extends RecyclerView.Adapter<CaloriaAdapter.ViewHold
                 btneditcalmodal.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        String newQuantityText = editquant.getText().toString().trim();
 
-                        int novaquant = Integer.parseInt(editquant.getText().toString());
+                        try {
+                            int newQuantity = Integer.parseInt(newQuantityText);
 
-                        UpdateCaloria updateCaloria = new UpdateCaloria(v.getContext());
-                        updateCaloria.onCaloriaUpdate(cal.get_id(), novaquant);
+                            UpdateCaloria updateCaloria = new UpdateCaloria(v.getContext());
+                            updateCaloria.onCaloriaUpdate(cal.get_id(), newQuantity);
+                            dialog.dismiss(); // Close the dialog after successful update
+                        } catch (NumberFormatException e) {
+                            Toast.makeText(v.getContext(), "Digite um valor numérico válido para as calorias", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 
